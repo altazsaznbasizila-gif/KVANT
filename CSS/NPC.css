@@ -1,28 +1,57 @@
 .sidebar {
-    min-width: 420px;
-    width: 420px;
+    min-width: 350px;
+    width: 410px;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0;
     background-color: #f8f9fa;
     z-index: 2000;
-    border-right: 6px dotted #09316d85; 
+    border-right: 6px dotted #0f316485; 
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.sidebar-scrollable {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 25px;
+    padding-bottom: 560px; 
+    box-sizing: border-box;
+}
+
+.sidebar-scrollable::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sidebar-scrollable::-webkit-scrollbar-thumb {
+    background: #0a58ca33;
+    border-radius: 10px;
+}
+
+.sidebar-shield {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background-color: #f8f9fa;
+    z-index: 2100;
+    border-top: 2px solid rgba(10, 88, 202, 0.1);
 }
 
 .sidebar::after {
     content: "";
     position: absolute;
     top: 0;
-    right: 4px; 
+    right: 8px; 
     height: 100%;
-    border-right: 6px dotted #09316d85;
+    border-right: 6px dotted #07193385;
     pointer-events: none;
+    z-index: 2200;
 }
 
 .sidebar h2 {
@@ -59,12 +88,13 @@
 }
 
 .npc-assistant.minimized-left {
-    position: absolute;
-    bottom: 20px;
-    left: 50% !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 205px !important; 
     transform: translateX(-50%) !important;
-    width: 380px !important;
+    width: 350px !important;
     height: 520px !important;
+    z-index: 9999 !important;
 }
 
 .npc-container {
@@ -110,6 +140,10 @@
 
 .npc-dialogue {
     display: block;
+    font-size: 1.05rem !important;
+    color: #000000 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
 }
 
 .npc-dialogue p {
@@ -119,7 +153,9 @@
     line-height: 1.5;
     text-align: left;
     word-wrap: break-word;
+    display: inline;
 }
+
 
 .npc-assistant.minimized-left .npc-dialogue p {
     clear: both;
@@ -137,28 +173,6 @@
     font-weight: bold;
     cursor: pointer;
     z-index: 3000;
-    transition: 0.3s;
-}
-
-#npc-next-btn:hover {
-    background: #084298;
-    transform: scale(1.05);
-}
-
-#npc-show-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 65px;
-    height: 65px;
-    display: none; 
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #ffb703;
-    z-index: 10001;
-    font-size: 30px;
-    border: none;
 }
 
 .npc-controls {
@@ -170,35 +184,6 @@
     z-index: 10;
 }
 
-.npc-controls button {
-    background: none;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.npc-controls button:hover {
-    opacity: 1;
-}
-
-.solution-btn {
-    background: #ffb703;
-    color: #111;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.solution-btn:hover {
-    background: #e0a102;
-    transform: scale(1.05);
-}
-
 #npc-hints-btn {
     background: #0a58ca;
     color: white;
@@ -208,4 +193,5 @@
     cursor: pointer;
     font-size: 0.9rem;
     margin-top: 10px;
+    display: inline-block;
 }
