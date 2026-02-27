@@ -1,0 +1,211 @@
+.sidebar {
+    min-width: 420px;
+    width: 420px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f8f9fa;
+    z-index: 2000;
+    border-right: 6px dotted #09316d85; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 4px; 
+    height: 100%;
+    border-right: 6px dotted #09316d85;
+    pointer-events: none;
+}
+
+.sidebar h2 {
+    color: #0a58ca;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background: #e9efff;
+    color: #0a58ca;
+}
+
+.npc-assistant {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 850px;
+    height: 280px;
+    max-width: 95vw;
+    z-index: 9425;
+}
+
+.npc-assistant.minimized-left {
+    position: absolute;
+    bottom: 20px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 380px !important;
+    height: 520px !important;
+}
+
+.npc-container {
+    background: white;
+    border: 6px solid #0a58ca; 
+    border-radius: 30px;
+    padding: 25px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.npc-avatar {
+    float: left;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    border: 5px solid #0a58ca;
+    overflow: hidden; 
+    background: white;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.npc-avatar img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.npc-assistant.minimized-left .npc-avatar {
+    float: none;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px auto;
+}
+
+.npc-dialogue {
+    display: block;
+}
+
+.npc-dialogue p {
+    font-size: 1.15rem;
+    color: #000000;
+    margin: 0;
+    line-height: 1.5;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.npc-assistant.minimized-left .npc-dialogue p {
+    clear: both;
+}
+
+#npc-next-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background: #0a58ca;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3000;
+    transition: 0.3s;
+}
+
+#npc-next-btn:hover {
+    background: #084298;
+    transform: scale(1.05);
+}
+
+#npc-show-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 65px;
+    height: 65px;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffb703;
+    z-index: 10001;
+    font-size: 30px;
+    border: none;
+}
+
+.npc-controls {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.npc-controls button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.npc-controls button:hover {
+    opacity: 1;
+}
+
+.solution-btn {
+    background: #ffb703;
+    color: #111;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.solution-btn:hover {
+    background: #e0a102;
+    transform: scale(1.05);
+}
+
+#npc-hints-btn {
+    background: #0a58ca;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
