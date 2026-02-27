@@ -24,7 +24,7 @@
 }
 
 .sidebar-scrollable::-webkit-scrollbar {
-    width: 6px;
+    width: 0px;
 }
 
 .sidebar-scrollable::-webkit-scrollbar-thumb {
@@ -248,5 +248,5 @@
 }
 
 .solution-btn:hover {
-    background: #e0a102;
+    background:#e0a102;
 }
