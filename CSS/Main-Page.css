@@ -252,8 +252,8 @@ body {
             rgba(255,255,255,1) 35%, 
             rgba(255,255,255,1) 65%, 
             rgba(255,255,255,0) 100%),
-        url('../Images/mech1.png'), 
-        url('../Images/mech2.png');
+        url('/KVANT/Images/mech1.png'), 
+        url('/KVANT/Images/mech2.png');
 
     background-position: 
         center center, 
@@ -348,8 +348,8 @@ body {
             rgba(255,255,255,1) 35%, 
             rgba(255,255,255,1) 65%, 
             rgba(255,255,255,0) 100%),
-        url('../Images/elec1.png'), 
-        url('../Images/elec2.png');
+        url('/KVANT/Images/elec1.png'), 
+        url('/KVANT/Images/elec2.png');
 
     background-position: 
         center center, 
@@ -400,8 +400,8 @@ body {
             rgba(255,255,255,1) 35%, 
             rgba(255,255,255,1) 65%, 
             rgba(255,255,255,0) 100%),
-        url('../Images/atom1.png'), 
-        url('../Images/atom2.png');
+        url('/KVANT/Images/atom1.png'), 
+        url('/KVANT/Images/atom2.png');
 
     background-position: 
         center center, 
@@ -453,8 +453,8 @@ body {
             rgba(255,255,255,1) 35%, 
             rgba(255,255,255,1) 65%, 
             rgba(255,255,255,0) 100%),
-        url('../Images/svet1.png'), 
-        url('../Images/svet2.png');
+        url('/KVANT/Images/svet1.png'), 
+        url('/KVANT/Images/svet2.png');
 
     background-position: 
         center center, 
