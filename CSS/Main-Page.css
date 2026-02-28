@@ -7,536 +7,8 @@
 body {
     background: #f2f4f8;
     font-family: Arial, sans-serif;
-    padding-top: 140px;
+    padding-top: 7.29vw;
 }
-
-
-   /*header*/
-  
-.top-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    padding: 0 40px;
-    background-color: #f7f7f7;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 6767;
-}
-
-.banner-left {
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    margin-left: -45px;
-}
-
-.top-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: -15px;
-}
-
-.top-main {
-    font-size: 22px;
-    font-weight: bold;
-    color: #0a58ca;
-    letter-spacing: 2px;
-}
-
-.top-sub {
-    font-size: 12px;
-    color: #888;
-    font-style: italic;
-}
-
-/* big banner */
-.banner-center {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 0 30px;
-}
-
-.progress-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 350px;
-}
-
-.progress-label {
-    font-size: 11px;
-    font-weight: bold;
-    color: #555;
-}
-
-.progress-bar-bg {
-    width: 100%;
-    height: 8px;
-    background: #e9ecef;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #dee2e6;
-}
-
-.progress-bar-fill {
-    width: 25%;
-    height: 100%;
-    background: linear-gradient(90deg, #0a58ca, #00d4ff);
-    transition: width 1s ease-in-out;
-}
-
-.progress-percent {
-    font-size: 11px;
-    font-weight: bold;
-    color: #0a58ca;
-}
-
-.fact-box {
-    background: #ffffff;
-    padding: 4px 12px;
-    border-radius: 15px;
-    border: 1px solid #0a58ca33;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-#daily-fact {
-    font-size: 12px;
-    color: #666;
-    font-style: italic;
-}
-
-/* clock + dropdown */
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.clock-display {
-    margin-right: 30px;
-    font-family: monospace;
-    background: #e9ecef;
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #dee2e6;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 25px;
-    transition: 0.3s;
-}
-
-.nav-link:hover {
-    color: #0a58ca;
-}
-
-.dropbtn {
-    background: #0a58ca;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    min-width: 200px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    color: black;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-   /*topic cards + big hero */
-
-.hero {
-    background: linear-gradient(135deg, #0a58ca, #00d4ff);
-    text-align: center;
-    padding: 100px 20px;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-.hero-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    margin-top: 30px;
-    background: white;
-    color: #0a58ca;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.page2 {
-    text-align: center;
-    width: calc(100% - 80px);
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
-.topic-card {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    margin-bottom: 20px;
-    transition: 0.3s;
-}
-
-
-
-
-
-/* mechanics bg pic */
-
-.topic-card.mechanics {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    min-height: 180px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    padding: 20px;
-
-    background-image: 
-        linear-gradient(to right, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,1) 35%, 
-            rgba(255,255,255,1) 65%, 
-            rgba(255,255,255,0) 100%),
-        url('../Images/mech1.png'), 
-        url('../Images/mech2.png');
-
-    background-position: 
-        center center, 
-        left center, 
-        right center;
-
-    background-repeat: no-repeat;
-    
-    background-size: 
-        100% 100%, 
-        40% 100%, 
-        40% 100%;
-}
-
-.topic-card.mechanics:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(10, 88, 202, 0.15);
-    border-color: #0a58ca;
-}
-
-.topic-card.mechanics h2 {
-    position: relative;
-    z-index: 10;
-    font-size: 24px;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-}
-
-.topic-card.mechanics p {
-    position: relative;
-    z-index: 10;
-    color: #555;
-    font-size: 14px;
-    max-width: 300px; 
-    text-align: center;
-}
-
-.topic-card.mechanics .open-btn, 
-.topic-card a {
-    display: inline-block;
-    background-color: #0a58ca; 
-    color: white !important;  
-    padding: 8px 25px;
-    border-radius: 20px;    
-    text-decoration: none !important; 
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 15px;
-    transition: 0.3s ease;
-    position: relative;       
-    z-index: 15;           
-}
-
-
-.topic-card a:hover {
-    background-color: #004fb0; 
-    transform: scale(1.1);  
-    box-shadow: 0 4px 10px rgba(10, 88, 202, 0.3);
-}
-
-
-.topic-card.mechanics h2, 
-.topic-card.mechanics p {
-    text-decoration: none !important;
-
-}
-
-
-
-
-
-/* electrical bg pic  */
-
-
-
-.topic-card.electricity {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    padding: 20px;
-
-    background-image: 
-        linear-gradient(to right, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,1) 35%, 
-            rgba(255,255,255,1) 65%, 
-            rgba(255,255,255,0) 100%),
-        url('../Images/elec1.png'), 
-        url('../Images/elec2.png');
-
-    background-position: 
-        center center, 
-        left center, 
-        right center;
-
-    background-repeat: no-repeat;
-    
-   
-    background-size: 
-        100% 100%, 
-        40% auto, 
-        40% auto;
-}
-
-.topic-card.electricity:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(255, 193, 7, 0.2); 
-    border-color: #ffc107;
-}
-
-.topic-card.electricity h2, 
-.topic-card.electricity p {
-    position: relative;
-    z-index: 10;
-    margin: 5px 0;
-}
-
-/* atom-kosmos bg pic  */
-
-.topic-card.space {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    padding: 20px;
-
-  
-    background-image: 
-        linear-gradient(to right, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,1) 35%, 
-            rgba(255,255,255,1) 65%, 
-            rgba(255,255,255,0) 100%),
-        url('../Images/atom1.png'), 
-        url('../Images/atom2.png');
-
-    background-position: 
-        center center, 
-        left center, 
-        right center;
-
-    background-repeat: no-repeat;
-    
-   
-    background-size: 
-        100% 100%, 
-        40% auto, 
-        40% auto;
-}
-
-.topic-card.space:hover {
-    transform: translateY(-5px);
-  
-    box-shadow: 0 12px 30px rgba(103, 58, 183, 0.25); 
-    border-color: #673ab7;
-}
-
-.topic-card.space h2, 
-.topic-card.space p {
-    position: relative;
-    z-index: 10;
-}
-
-
-
-/* light - sound bg pic  */
-
-.topic-card.light-sound {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    padding: 20px;
-
-    background-image: 
-        linear-gradient(to right, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,1) 35%, 
-            rgba(255,255,255,1) 65%, 
-            rgba(255,255,255,0) 100%),
-        url('../Images/svet1.png'), 
-        url('../Images/svet2.png');
-
-    background-position: 
-        center center, 
-        left center, 
-        right center;
-
-    background-repeat: no-repeat;
-    
-    background-size: 
-        100% 100%, 
-        38% auto, 
-        38% auto;
-}
-
-.topic-card.light-sound:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 188, 212, 0.25); 
-    border-color: #00bcd4;
-}
-
-.topic-card.light-sound h2, 
-.topic-card.light-sound p {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-}
-
-
-
-
-
-/* ================================================================
-   footer
-   ================================================================ */
-footer {
-    background-color: #1a1a1a; /* Тъмно сиво/черно като на снимката */
-    color: white;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; 
-    align-items: flex-start;
-    flex-wrap: wrap; 
-}
-
-.footer-section {
-    flex: 1; 
-    min-width: 250px; 
-    margin: 10px;
-    text-align: center; 
-}
-
-.footer-section h3 {
-    color: #00bcd4; 
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 8px;
-}
-
-.footer-section a {
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-section a:hover {
-    color: #00bcd4;
-}
-
 
 #loading-screen {
     position: fixed;
@@ -551,10 +23,16 @@ footer {
     z-index: 10000;
 }
 
+.loader-container {
+    position: relative;
+    width: 4.17vw;
+    height: 4.17vw;
+}
+
 .dot {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 4.17vw;
+    height: 4.17vw;
     animation: rotate-dots 1.5s linear infinite;
 }
 
@@ -562,8 +40,8 @@ footer {
     content: '';
     display: block;
     margin: 0 auto;
-    width: 10px;
-    height: 10px;
+    width: 0.52vw;
+    height: 0.52vw;
     background-color: white;
     border-radius: 50%;
 }
@@ -582,147 +60,404 @@ footer {
     50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
 }
 
-
-@media (max-width: 850px) {
-    .banner-center, .clock-display, .slogan-sub {
-        display: none;
-    }
-    
-    .top-banner {
-        height: auto;
-        padding: 15px;
-        flex-direction: column;
-        position: relative;
-    }
-
-    body {
-        padding-top: 0;
-    }
-
-    .nav-right {
-        margin-top: 10px;
-    }
+.top-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6.25vw;
+    padding: 0 2.08vw;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0.1vw 0.26vw rgba(0,0,0,0.2);
+    z-index: 6767;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.banner-left {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: -2.34vw;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -0.78vw;
+}
+
+.top-main {
+    font-size: 1.15vw;
+    font-weight: bold;
+    color: #0a58ca;
+    letter-spacing: 0.1vw;
+}
+
+.top-sub {
+    font-size: 0.63vw;
+    color: #888;
+    font-style: italic;
+}
+
+.banner-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.42vw;
+    padding: 0 1.56vw;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 0.52vw;
+    width: 100%;
+    max-width: 18.23vw;
+}
+
+.progress-label {
+    font-size: 0.57vw;
+    font-weight: bold;
+    color: #555;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 0.42vw;
+    background: #e9ecef;
+    border-radius: 0.52vw;
+    overflow: hidden;
+    border: 0.05vw solid #dee2e6;
+}
+
+.progress-bar-fill {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, #0a58ca, #00d4ff);
+    transition: width 1s ease-in-out;
+}
+
+.progress-percent {
+    font-size: 0.57vw;
+    font-weight: bold;
+    color: #0a58ca;
+}
+
+.fact-box {
+    background: #ffffff;
+    padding: 0.21vw 0.63vw;
+    border-radius: 0.78vw;
+    border: 0.05vw solid #0a58ca33;
+    width: 100%;
+    max-width: 20.83vw;
+    text-align: center;
+}
+
+#daily-fact {
+    font-size: 0.63vw;
+    color: #666;
+    font-style: italic;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.clock-display {
+    margin-right: 1.56vw;
+    font-family: monospace;
+    background: #e9ecef;
+    padding: 0.26vw 0.78vw;
+    border-radius: 0.78vw;
+    font-size: 0.73vw;
+    font-weight: bold;
+    border: 0.05vw solid #dee2e6;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-right: 1.3vw;
+    font-size: 0.83vw;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #0a58ca;
+}
+
+.dropbtn {
+    background: #0a58ca;
+    color: white;
+    border: none;
+    padding: 0.63vw 1.04vw;
+    cursor: pointer;
+    border-radius: 0.26vw;
+    font-weight: bold;
+    font-size: 0.83vw;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    box-shadow: 0 0.26vw 0.78vw rgba(0,0,0,0.2);
+    min-width: 10.42vw;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.63vw;
+    text-decoration: none;
+    color: black;
+    font-size: 0.73vw;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0a58ca, #00d4ff);
+    text-align: center;
+    padding: 5.2vw 1.04vw;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.6vw;
+    margin-bottom: 0.78vw;
+}
+
+.hero p {
+    font-size: 1.04vw;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 0.73vw 1.56vw;
+    margin-top: 1.56vw;
+    background: white;
+    color: #0a58ca;
+    text-decoration: none;
+    border-radius: 1.56vw;
+    font-weight: bold;
+    font-size: 0.9vw;
+    transition: 0.3s;
+}
+
+.page2 {
+    text-align: center;
+    width: calc(100% - 4.17vw);
+    margin: 2.08vw auto;
+    background: white;
+    padding: 1.3vw;
+    border-radius: 0.52vw;
+    border: 0.05vw solid #ddd;
+}
+
+.topic-card {
+    background: #f9f9f9;
+    padding: 1.3vw;
+    border-radius: 0.52vw;
+    border: 0.05vw solid #eee;
+    margin-bottom: 1.04vw;
+    transition: 0.3s;
+}
+
+.topic-card.mechanics,
+.topic-card.electricity,
+.topic-card.space,
+.topic-card.light-sound {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 0.05vw solid #ddd;
+    min-height: 9.38vw; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    padding: 1.04vw;
+    background-repeat: no-repeat;
+}
+
+.topic-card.mechanics {
+    background-image: linear-gradient(to right, 
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,1) 35%,
+    rgba(255,255,255,1) 65%,
+    rgba(255,255,255,0) 100%),
+        url('../Images/mech1.png'), 
+        url('../Images/mech2.png');
+    background-position: center center, left center, right center;
+    background-size: 100% 100%, 40% 100%, 40% 100%;
+}
+
+.topic-card.electricity {
+    background-image: 
+    linear-gradient(to right,
+     rgba(255,255,255,0) 0%,
+     rgba(255,255,255,1) 35%,
+     rgba(255,255,255,1) 65%, 
+     rgba(255,255,255,0) 100%),
+      url('../Images/elec1.png'), 
+      url('../Images/elec2.png');
+    background-position: center center, left center, right center;
+    background-size: 100% 100%, 40% auto, 40% auto;
+}
+
+.topic-card.space {
+    background-image: linear-gradient(to right,
+     rgba(255,255,255,0) 0%,
+     rgba(255,255,255,1) 35%,
+     rgba(255,255,255,1) 65%,
+     rgba(255,255,255,0) 100%),
+    url('../Images/atom1.png'), 
+    url('../Images/atom2.png');
+    background-position: center center, left center, right center;
+    background-size: 100% 100%, 40% auto, 40% auto;
+}
+
+.topic-card.light-sound {
+    background-image: linear-gradient(to right,
+     rgba(255,255,255,0) 0%,
+     rgba(255,255,255,1) 35%,
+     rgba(255,255,255,1) 65%,
+     rgba(255,255,255,0) 100%),
+        url('../Images/svet1.png'), 
+        url('../Images/svet2.png');
+    background-position: center center, left center, right center;
+    background-size: 100% 100%, 38% auto, 38% auto;
+}
+
+.topic-card:hover { transform: translateY(-0.26vw); }
+.topic-card.mechanics:hover { 
+    box-shadow: 0 0.63vw 1.56vw rgba(10, 88, 202, 0.15); 
+    border-color: #0a58ca; 
+}
+.topic-card.electricity:hover { 
+    box-shadow: 0 0.63vw 1.56vw rgba(255, 193, 7, 0.2); 
+    border-color: #ffc107; 
+}
+.topic-card.space:hover { 
+    box-shadow: 0 0.63vw 1.56vw rgba(103, 58, 183, 0.25); 
+    border-color: #673ab7; 
+}
+.topic-card.light-sound:hover { 
+    box-shadow: 0 0.63vw 1.56vw rgba(0, 188, 212, 0.25); 
+    border-color: #00bcd4; 
+}
+
+.topic-card h2 { 
+    position: relative; 
+    z-index: 10; 
+    font-size: 1.25vw; 
+    color: #1a1a1a; 
+    margin-bottom: 0.42vw; text-decoration: none !important; 
+}
+.topic-card p { 
+    position: relative; 
+    z-index: 10; color: #555; 
+    font-size: 0.73vw; max-width: 15.63vw; 
+    text-align: center; 
+    text-decoration: none !important; }
+
+.topic-card a {
+    display: inline-block;
+    background-color: #0a58ca; 
+    color: white !important;  
+    padding: 0.42vw 1.3vw;
+    border-radius: 1.04vw;    
+    text-decoration: none !important; 
+    font-weight: bold;
+    font-size: 0.73vw;
+    margin-top: 0.78vw;
+    transition: 0.3s ease;
+    position: relative;       
+    z-index: 15;              
+}
+
+.topic-card a:hover {
+    background-color: #004fb0; 
+    transform: scale(1.1);  
+    box-shadow: 0 0.21vw 0.52vw rgba(10, 88, 202, 0.3);
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 2.08vw 1.04vw;
+    margin-top: 2.6vw;
+}
+
+.footer-container {
+    max-width: 62.5vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    flex-wrap: wrap; 
+}
+
+.footer-section {
+    flex: 1; 
+    min-width: 13.02vw; 
+    margin: 0.52vw;
+    text-align: center; 
+}
+
+.footer-section h3 {
+    color: #00bcd4; 
+    margin-bottom: 0.78vw;
+    font-size: 0.94vw;
+}
+
+.footer-section p, .footer-section ul li {
+    font-size: 0.73vw;
+    margin-bottom: 0.42vw;
+}
+
+.footer-section ul { 
+    list-style: none; 
+    padding: 0; 
+}
+.footer-section a { color: #ccc; 
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+.footer-section a:hover { 
+    color: #00bcd4; 
+}
+
+@media (max-width: 850px) {
+    .banner-center, .clock-display { 
+        display: none; 
+    }
+    .top-banner { 
+        height: auto; 
+        padding: 0.78vw; 
+        flex-direction: column; 
+        position: relative; 
+    }
+    body { 
+        padding-top: 0; 
+    }
+    .nav-right { 
+        margin-top: 0.52vw; 
+    }
+}

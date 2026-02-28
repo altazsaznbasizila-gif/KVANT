@@ -1,0 +1,70 @@
+.exp-panel{
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  border: 3px solid #000;
+  border-radius: 12px;
+  padding: 12px 18px;
+  z-index: 200;
+  box-shadow: 5px 5px 0 #000;
+  width: min(760px, 92vw);
+  font-family: Arial, sans-serif;
+}
+.btn-row{
+  display:flex;
+  gap:10px;
+  margin:10px 0;
+  flex-wrap: wrap;
+}
+.exp-panel button{
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 8px 14px;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.exp-panel button:hover{ transform: translateY(-1px); }
+.readout{
+  display:flex;
+  gap:20px;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+.rule{
+  margin-top:8px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.mark{
+  position: absolute;
+  bottom: 42%;
+  transform: translate(-50%, 10px);
+  width: 4px;
+  height: 26px;
+  background: #000;
+  z-index: 50;
+}
+.mark-label{
+  position:absolute;
+  bottom: calc(42% + 26px);
+  transform: translate(-50%, 0);
+  font-weight: 900;
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  background: rgba(255,255,255,0.8);
+  padding: 2px 6px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  z-index: 51;
+}
+        .scene { position: relative; height: 300px; background: #f0f0f0; margin-top: 20px; border-bottom: 4px solid #333; overflow: hidden; }
+        .car { position: absolute; bottom: 42%; left: 0; width: 60px; height: 30px; background: #ff4757; border: 3px solid #000; border-radius: 6px; z-index: 100; transition: transform 0.25s ease-out; }
+        
+        .exp-panel { background: white; border: 3px solid #000; padding: 15px; width: 400px; margin: 20px auto; font-family: sans-serif; box-shadow: 8px 8px 0 #000; }
+        .mark { position: absolute; bottom: 42%; width: 4px; height: 40px; background: #000; z-index: 10; transform: translateX(-50%); }
+        .mark-label { position: absolute; bottom: 58%; font-size: 12px; font-weight: bold; transform: translateX(-50%); background: white; border: 1px solid #000; padding: 2px; }
+        .btn-row button { cursor: pointer; padding: 5px 10px; font-weight: bold; border: 2px solid #000; background: #fff; }

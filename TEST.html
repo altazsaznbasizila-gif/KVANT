@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Физична Симулация</title>
+    <link rel="stylesheet" href="TEST.css">
+    <script src="TEST.js"></script>
+    
+</head>
+<body>
+
+<div class="exp-panel">
+    <label><input type="checkbox" id="mode-uniform" checked> <b>Равномерно движение</b></label>
+    <div style="margin: 10px 0;">
+        <label>Скорост (v): </label>
+        <input type="range" id="input-s" min="5" max="50" value="20">
+    </div>
+    <div class="btn-row">
+        <button id="btn-step">+1 s (стъпка)</button>
+        <button id="btn-reset">Нулирай</button>
+    </div>
+    <div class="readout">
+        <span>t = <b id="t-read">0</b> s | </span>
+        <span>v = <b id="v-read">0</b> m/s | </span>
+        <span>s = <b id="s-read">0</b> m</span>
+    </div>
+</div>
+
+<div class="scene">
+    <div class="car"></div>
+</div>
+
+
+</body>
+</html>
