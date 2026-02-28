@@ -139,3 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function toggleTaskSolution() {
+    var solutionBox = document.getElementById("task-solution-box");
+    var btnText = document.getElementById("solution-btn-text");
+    
+    if (solutionBox.style.display === "none") {
+        solutionBox.style.display = "block";
+        btnText.innerHTML = "Скрий решението";
+        btnText.style.background = "#ffb703"; 
+    } else {
+        solutionBox.style.display = "none";
+        btnText.innerHTML = "Решение";
+    }
+}

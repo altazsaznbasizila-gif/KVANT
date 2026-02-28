@@ -1,3 +1,48 @@
+/* Sidebar header */
+
+.sidebar-header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.sidebar h2 {
+    color: #0a58ca;
+    font-size: 35px;
+    margin-bottom:7px;
+}
+
+.button-home {
+    background: #1250ad;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar .button-home {
+    display: inline-block;
+    background-color: #0d2f63;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sidebar .button-home:hover {
+    background-color: #0a58ca;
+    transform: scale(1.05);
+}
+
+/* Main of sidebar */
+
 .sidebar {
     min-width: 350px;
     width: 410px;
@@ -13,6 +58,17 @@
     border-right: 6px dotted #0f316485; 
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8px; 
+    height: 100%;
+    border-right: 6px dotted #07193385;
+    pointer-events: none;
+    z-index: 2200;
 }
 
 .sidebar-scrollable {
@@ -43,23 +99,6 @@
     border-top: 2px solid rgba(10, 88, 202, 0.1);
 }
 
-.sidebar::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 8px; 
-    height: 100%;
-    border-right: 6px dotted #07193385;
-    pointer-events: none;
-    z-index: 2200;
-}
-
-.sidebar h2 {
-    color: #0a58ca;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-}
-
 .sidebar a {
     display: block;
     padding: 12px;
@@ -76,6 +115,14 @@
     color: #0a58ca;
 }
 
+.sidebar p:hover {
+    transition: 0.5s;
+    background-color: #0a57ca79;
+    cursor: pointer;
+}
+
+/* Main NPC -> avatar, assistant, dialogue */
+
 .npc-assistant {
     position: fixed;
     bottom: 30px;
@@ -85,16 +132,6 @@
     height: 280px;
     max-width: 95vw;
     z-index: 9425;
-}
-
-.npc-assistant.minimized-left {
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 205px !important; 
-    transform: translateX(-50%) !important;
-    width: 350px !important;
-    height: 520px !important;
-    z-index: 9999 !important;
 }
 
 .npc-container {
@@ -131,13 +168,6 @@
     object-fit: contain;
 }
 
-.npc-assistant.minimized-left .npc-avatar {
-    float: none;
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 15px auto;
-}
-
 .npc-dialogue {
     display: block;
     font-size: 1.05rem !important;
@@ -154,6 +184,54 @@
     text-align: left;
     word-wrap: break-word;
     display: inline;
+}
+
+/* NPC controls + Minimized */
+
+.npc-controls {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 3100;
+}
+
+.npc-controls button {
+    background: #f0f2f5;
+    border: none;
+    padding: 5px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #555;
+    transition: 0.2s;
+}
+
+.npc-controls button:hover {
+    color: #000;
+}
+
+.npc-assistant.minimized-left {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 205px !important; 
+    transform: translateX(-50%) !important;
+    width: 350px !important;
+    height: 520px !important;
+    z-index: 9999 !important;
+}
+
+.npc-assistant.minimized-left .npc-avatar {
+    float: none;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px auto;
 }
 
 .npc-assistant.minimized-left .npc-dialogue,
@@ -193,35 +271,6 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.npc-controls {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 3100;
-}
-
-.npc-controls button {
-    background: #f0f2f5;
-    border: none;
-    padding: 5px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #555;
-    transition: 0.2s;
-}
-
-.npc-controls button:hover {
-    color: #000;
-}
-
 #npc-hints-btn {
     background: #0a58ca;
     color: white;
@@ -233,6 +282,7 @@
     margin-top: 10px;
     display: inline-block;
 }
+
 .solution-btn {
     background: #ffb703;
     color: #111;

@@ -6,6 +6,7 @@
     <title>Физична Симулация</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
+        
         :root { 
             --car-red: #d63031; 
             --window-blue: #81ecec; 
@@ -22,14 +23,16 @@
 
      
         .controls {
-            position: absolute; 
-            top: 20px; display: flex; gap: 40px; 
-            background: rgba(255, 255, 255, 0.9); 
-            padding: 15px 30px; 
-            border: 3px solid #000; 
-            border-radius: 10px; 
-            z-index: 100; 
-            box-shadow: 5px 5px 0px #000; 
+            top: 10px;
+            transform: translateY(-10px);
+            position: absolute;
+            display: flex;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
+            border: 3px solid #000;
+            border-radius: 10px;
+            z-index: 100;
         }
         .control-group { 
             display: flex; 
@@ -55,23 +58,28 @@
         }
         
      
-        .simulation-wrapper { position: absolute; 
-            bottom: 40%; width: 100%; 
+        .simulation-wrapper {
+            transform: translateY(20px);
+            position: absolute; 
+            bottom: 40%; 
+            width: 100%; 
             display: flex; 
             justify-content: center; 
-            align-items: center; 
+            align-items: flex-end; 
             padding: 0 50px; 
             box-sizing: border-box; 
             z-index: 2; 
-            transform: translateY(5px); 
-        }
+            transform: translateY(5px);
+}
 
        
-        .car { width: 140px; 
+        .car {
+            width: 140px; 
             height: 80px; 
             position: relative; 
             flex-shrink: 0; 
-            animation: doodleFrame 0.1s infinite; 
+            margin-bottom: -5px;
+            animation: doodleFrame 0.1s infinite;
         }
         .car-body { 
             position: absolute; 
@@ -107,11 +115,11 @@
             width: 30px; 
             height: 30px; 
             background: #2d3436;
-             border: 3px solid #000; 
-             border-radius: 50%; 
-             display: flex; 
-             align-items: center; 
-             justify-content: center; 
+            border: 3px solid #000; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
             }
 
         .wheel::after { 
@@ -163,10 +171,12 @@
             border-left: 22px solid #000; 
         }
         
-        .label { font-size: 32px; 
+        .label { 
+            font-size: 32px; 
             font-weight: 900; 
             font-style: italic; 
-            font-family: 'Arial Black', sans-serif; 
+            font-family: 'Arial Black', sans-serif;
+            
         }
         .label-s { 
             margin-bottom: 15px; 
@@ -182,7 +192,7 @@
 
     <div class="controls">
         <div class="control-group">
-            <label>Време: <span id="val-s">5</span>s</label>
+            <label>Скорост: <span id="val-s">5</span>m/s</label>
             <input type="range" id="input-s" min="1" max="20" value="5">
         </div>
         <div class="control-group">
@@ -198,57 +208,60 @@
 
     <script>
         const wrapper = document.getElementById('wrapper');
-        const inputS = document.getElementById('input-s');
-        const inputM = document.getElementById('input-m');
+const inputV = document.getElementById('input-s'); 
+const inputS = document.getElementById('input-m');
 
-        function createCarHTML() {
-            return `
-                <div class="car">
-                    <div class="car-roof"><div class="window"></div><div class="window"></div></div>
-                    <div class="car-body"></div>
-                    <div class="wheel back"></div>
-                    <div class="wheel front"></div>
-                </div>`;
-        }
+function createCarHTML() {
+    return `
+        <div class="car">
+            <div class="car-roof"><div class="window"></div><div class="window"></div></div>
+            <div class="car-body"></div>
+            <div class="wheel back"></div>
+            <div class="wheel front"></div>
+        </div>`;
+}
 
-        function createGapHTML() {
-            return `
-                <div class="gap-container">
-                    <div class="label label-s">5s</div>
-                    <div class="arrow"></div>
-                    <div class="label label-m">60m</div>
-                </div>`;
-        }        
-        let content = createCarHTML();
-        for(let i=0; i<3; i++) content += createGapHTML() + createCarHTML();
-        wrapper.innerHTML = content;        
-        function update() {
-            const s = inputS.value;
-            const m = inputM.value;
-            document.getElementById('val-s').innerText = s;
-            document.getElementById('val-m').innerText = m;
+function createGapHTML() {
+    return `
+        <div class="gap-container">
+            <div class="label label-t">0s</div> <div class="arrow"></div>
+            <div class="label label-s">0m</div> </div>`;
+}        
 
-           
-            const gapWidth = (m / 150) * 400 + 40;
+let content = createCarHTML();
+for(let i=0; i<3; i++) content += createGapHTML() + createCarHTML();
+wrapper.innerHTML = content;        
 
-            gsap.to(".gap-container", {                
-                width: gapWidth,
-                duration: 0.3,
-                ease: "sine.out"
-            });
+function update() {
+    const v = parseFloat(inputV.value); 
+    const s = parseFloat(inputS.value); 
+    
+    
+    const t = (s / v).toFixed(1); 
 
-            document.querySelectorAll('.label-s').forEach(el => 
-            el.innerHTML = `${s}<sub>s</sub>`
-        );
-            document.querySelectorAll('.label-m').forEach(el => 
-            el.innerHTML = `${m}<sub>m</sub>`
-        );
-        
-        }
+    document.getElementById('val-s').innerText = v;
+    document.getElementById('val-m').innerText = s; 
 
-        inputS.addEventListener('input', update);
-        inputM.addEventListener('input', update);
-        update();
+    const gapWidth = (s / 150) * 400 + 40;
+
+    gsap.to(".gap-container", {                
+        width: gapWidth,
+        duration: 0.3,
+        ease: "sine.out"
+    });
+
+    document.querySelectorAll('.label-t').forEach(el => 
+        el.innerHTML = `${t}<sub>s</sub>`
+    );
+
+    document.querySelectorAll('.label-s').forEach(el => 
+        el.innerHTML = `${s}<sub>m</sub>`
+    );
+}
+
+inputV.addEventListener('input', update);
+inputS.addEventListener('input', update);
+update();
     </script>
 
     
