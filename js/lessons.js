@@ -4,20 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.getElementById('npc-text');
     const nextBtn = document.getElementById('npc-next-btn');
 
-    //close - show
+    // close - show
     const closeBtn = document.getElementById('npc-close');
     const showBtn = document.getElementById('npc-show-btn');
 
-    //minimize
+    // minimize
     const minimizeBtn = document.getElementById('npc-minimize');
-    const resizeHandle = document.getElementById('npc-resize-handle');
     const sidebar = document.querySelector('.sidebar');
 
     // Example task
     const solutionBtn = document.getElementById('show-solution-btn'); 
     const solutionText = document.getElementById('solution-text');
-
-    
 
     let currentStep = 0;
     let activeSection = "";
@@ -25,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const texts = {
         section2: [
             "Тоест отправно тяло е това тяло, от чиято гледна точка определяме дали други тела се движат. <br> Пример: има една баба, която вижда дете да кара скейтборд: <br>  ● Ако определим бабата за отправното тяло - според нея детето И скейтборда се движат. Тя вижда детето да се премества от началното си положението.",
-           
             "● Ако определим детето за отправното тяло - според него бабата се движи - през неговата гледна точка всичко около него се движи (то е отправното тяло). Въпреки това, че действително то извършва движение, то е оправното тяло и зареди това се определяме според него, а не според други тела.",
             " Също така според него скейтборда не се движи - през неговата гледна точка скейтборда е в покой (действително детето и движещата се дъска извършват едно и също движение и имат еднаква скорост - затова илюзията, че според детето скейтборда не се движи, е вярно само ако то е отправното тяло )"
         ],
@@ -42,28 +38,35 @@ document.addEventListener('DOMContentLoaded', () => {
             "!!НО ПЪТЯТ НЕ Е ИЗПОЛЗВАН В ОСНОВНАТА СИ МЕРНА ЕДИНИЦА (SI)!! => S = 250 км = 250*10³ м понеже 1 км = 1000 м = 10³ м. ",
             "Друго дадено: t₁ = 1 ч, t₂ = 2 ч. Със сумата на тези времена получаваме цялото време: t = t₁ + t₂ = 3 ч.",
             "ДА НЕ ЗАБРАВИМ SI! t = 3 ч = 3*60 = 180 мин = 180*60 = 10 800 сек. (1ч = 60мин = 3600сек).",
-            "Сега да намерим средната скорост: Vср = S/Δt. Тъй като имаме цялото време, Δt = t - t&#8323;, където t&#8323; = 0, защото ние нямаме какво да извадим -> ние си имаме цялото време (t), от което се нуждаем при средната скорост",
+            "Сега да намерим средната скорост: Vср = S/Δt. Тъй като имаме цялото време, Δt = t - t₀, където t₀ = 0, защото ние нямаме какво да извадим -> ние си имаме цялото време (t), от което се нуждаем при средната скорост",
             "Финално пресмятаме: Vср = (250*10³) / 10 800. Вече имаме всички данни в SI единици!",
             "Крайната стойност, която получаваме е ≈ 23.148 м/сек"
+        ],
+        section5: [
+            "<b>Много внимавай</b> - не смесвай определенията за <i>моментна и средна скорост</i>! Прочети тънката разлика между определенията им и виж разликава във формулите.",
+        ],
+        section6: [
+            "Виж как се намира мерната единица на ускорението: <br> $$[a] = \\frac{[v]}{[t]} = \\frac{m/s}{s} = m/s^2$$"
+        ],
+        section7: [
+            "Когато едно движение има ускорение, то се разделя на тези двата вида в жълтото квадратче"
         ]
     };
 
-
     if (solutionBtn) {
-    solutionBtn.addEventListener('click', () => {
-        if (solutionText.style.display === 'none') {
-            solutionText.style.display = 'block';
-            solutionBtn.textContent = 'Скрий решението';
-            
-            if (window.MathJax) {
-                MathJax.typesetPromise([solutionText]);
+        solutionBtn.addEventListener('click', () => {
+            if (solutionText.style.display === 'none' || solutionText.style.display === '') {
+                solutionText.style.display = 'block';
+                solutionBtn.textContent = 'Скрий решението';
+                if (window.MathJax) {
+                    MathJax.typesetPromise([solutionText]);
+                }
+            } else {
+                solutionText.style.display = 'none';
+                solutionBtn.textContent = 'Решение';
             }
-        } else {
-            solutionText.style.display = 'none';
-            solutionBtn.textContent = 'Решение';
-        }
-    });
-}
+        });
+    }
 
     closeBtn.addEventListener('click', () => {
         npcAssistant.style.display = 'none';
@@ -81,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     minimizeBtn.addEventListener('click', () => {
         const isMinimized = npcAssistant.classList.toggle('minimized-left');
         if (isMinimized) {
-            sidebar.appendChild(npcAssistant); 
+            if(sidebar) sidebar.appendChild(npcAssistant); 
             minimizeBtn.textContent = '➡️';
             npcAssistant.style.width = '100%';
         } else {
@@ -97,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (texts[activeSection] && currentStep < texts[activeSection].length) {
                 textElement.innerHTML = texts[activeSection][currentStep];
             }
+            if (window.MathJax) {
+                MathJax.typesetPromise([textElement]);
+            }
             if (currentStep === (texts[activeSection] ? texts[activeSection].length - 1 : 0)) {
                 nextBtn.style.display = 'none';
             }
@@ -105,13 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     textElement.addEventListener('click', (e) => {
         if (e.target && e.target.id === 'npc-hints-btn') {
+            currentStep = 0;
             textElement.innerHTML = texts.section4[0];
             nextBtn.style.display = 'block';
         }
     });
 
     window.addEventListener('scroll', function() {
-        const sections = ['section1', 'section2', 'section3', 'section4'];
+        const sections = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'];
         const triggerPoint = window.innerHeight / 2;
 
         sections.forEach(id => {
@@ -128,11 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         nextBtn.style.display = 'none';
                         textElement.innerHTML = "Виж сега... когато едно тяло изменя положението си <i>(тоест то се мести и си променя началната точка)</i>, след някакъв период от време, то това се нарича Механично движение.";
                     } else if (id === "section4") {
-                        textElement.innerHTML = "Ето и една примерна задача, която да решиш. Успех! <br> <button id='npc-hints-btn'; style='background:#0a58ca; color:white; border:none; padding:5px 10px; border-radius:5px; margin-top:10px; cursor:pointer;'>Насоки</button>";
+                        textElement.innerHTML = "Ето и една примерна задача, която да решиш. Успех! <br> <button id='npc-hints-btn' style='background:#0a58ca; color:white; border:none; padding:5px 10px; border-radius:5px; margin-top:10px; cursor:pointer;'>Насоки</button>";
                         nextBtn.style.display = 'none';
                     } else if (texts[id]) {
                         textElement.innerHTML = texts[id][0];
-                        nextBtn.style.display = 'block';
+                        nextBtn.style.display = texts[id].length > 1 ? 'block' : 'none';
+                    }
+
+                    // ДОБАВЕНО ТУК: Обновява формулите веднага при скрол
+                    if (window.MathJax) {
+                        MathJax.typesetPromise([textElement]);
                     }
                 }
             }
@@ -143,11 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleTaskSolution() {
     var solutionBox = document.getElementById("task-solution-box");
     var btnText = document.getElementById("solution-btn-text");
+    if(!solutionBox) return;
     
     if (solutionBox.style.display === "none") {
         solutionBox.style.display = "block";
         btnText.innerHTML = "Скрий решението";
-        btnText.style.background = "#ffb703"; 
     } else {
         solutionBox.style.display = "none";
         btnText.innerHTML = "Решение";

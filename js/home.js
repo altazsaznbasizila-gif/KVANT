@@ -72,3 +72,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (progressPercent) progressPercent.textContent = "100%";
     }, 2000);
 });
+
+
+
+function getTodayDate() {
+    return new Date().toISOString().split('T')[0];
+}
+
+const today = getTodayDate();
+const savedDate = localStorage.getItem('kvantDate');
+let totalSeconds = parseInt(localStorage.getItem('kvantTime')) || 0;
+
+if (savedDate !== today) {
+    totalSeconds = 0;
+    localStorage.setItem('kvantTime', 0);
+    localStorage.setItem('kvantDate', today);
+}
+
+function updateTimer() {
+    totalSeconds++;
+    localStorage.setItem('kvantTime', totalSeconds);
+
+    let hours = Math.floor(totalSeconds / 3600);
+    let minutes = Math.floor((totalSeconds % 3600) / 60);
+    let seconds = totalSeconds % 60;
+
+    const displayH = hours < 10 ? "0" + hours : hours;
+    const displayM = minutes < 10 ? "0" + minutes : minutes;
+    const displayS = seconds < 10 ? "0" + seconds : seconds;
+
+    const timerElement = document.getElementById("session-timer");
+    if (timerElement) {
+        timerElement.innerText = `${displayH}:${displayM}:${displayS}`;
+    }
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
