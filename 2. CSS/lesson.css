@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: clamp(15px, 2.08vw, 40px);
+    padding-bottom: clamp(100px, 18.23vw, 350px);
+    margin-left: clamp(200px, 20.05vw, 350px);
+}
+
+.breadcrumb {
+    color: #666;
+    margin-bottom: 1.04vw;
+    font-size: clamp(12px, 0.94vw, 18px);
+}
+
+.lesson-card {
+    background: white;
+    padding: clamp(20px, 2.08vw, 40px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.lesson-card h1 {
+    font-size: clamp(24px, 2.5vw, 48px);
+    margin-bottom: clamp(15px, 1.56vw, 30px);
+    color: #111;
+}
+
+.lesson-part {
+    margin-bottom: clamp(40px, 5.21vw, 100px);
+    padding-top: clamp(15px, 2.08vw, 40px);
+}
+
+iframe {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #fff;
+    border: none;
+    max-width: 100%;
+}
+
+.info-box {
+    background: #f0f5ff;
+    border-left: clamp(3px, 0.31vw, 6px) solid #0a58ca;
+    padding: clamp(10px, 1.04vw, 20px);
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.box-title {
+    font-family: Georgia, serif;
+    font-size: clamp(16px, 1.4vw, 26px);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.definition {
+    font-family: Georgia, serif;
+    font-size: clamp(15px, 1.3vw, 24px);
+    line-height: 1.6;
+}
+
+.content p {
+    font-size: clamp(14px, 1.15vw, 22px);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.example {
+    background: #fff7e6;
+    border-left: clamp(3px, 0.31vw, 6px) solid #ffb703;
+    padding: clamp(15px, 1.3vw, 25px);
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.formula-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.formula-main {
+    font-size: clamp(22px, 2.2vw, 42px);
+}
+
+.fraction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fraction .top {
+    font-size: clamp(18px, 1.8vw, 34px);
+    border-bottom: 2px solid #000;
+    padding: 0 10px;
+}
+
+.fraction .bottom {
+    font-size: clamp(18px, 1.8vw, 34px);
+    padding: 0.26vw 0.52vw;
+}
+
+.lesson-folder {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.lesson-folder::before {
+    content: none !important;
+}
+
+.lesson-folder summary {
+    padding-top: clamp(10px, 1.56vw, 30px);
+    padding-bottom: 10px;
+    font-weight: 850;
+    color: #0d2f63;
+    text-align: left;
+    font-size: clamp(14px, 1.04vw, 20px);
+    cursor: pointer;
+    outline: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.lesson-folder summary::-webkit-details-marker,
+.lesson-folder summary::marker {
+    display: none !important;
+}
+
+.lesson-folder summary::before {
+    content: '▶';
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+    color: #0a58ca;
+    display: inline-block;
+}
+
+.lesson-folder[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.lesson-folder summary:hover {
+    color: #0a58ca;
+}
+
+.lesson-folder a {
+    display: block;
+    width: fit-content;
+    padding: 8px 15px;
+    margin-left: 25px;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: clamp(13px, 0.9vw, 17px);
+    transition: 0.3s;
+}
+
+.lesson-folder a:hover {
+    background: #e9efff;
+    color: #0a58ca;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        margin-left: 0;
+        padding: 20px;
+    }
+}

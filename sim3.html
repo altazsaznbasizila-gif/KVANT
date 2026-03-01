@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Симулация Движение</title>
     <style>
-        body { margin: 0; overflow: hidden; background: #99d9ea; font-family: 'Arial Black', sans-serif; }
-        canvas { display: block; }
+        body { margin: 0; 
+            overflow: hidden; 
+            background: #99d9ea; 
+            font-family: 'Arial Black', sans-serif; 
+        }
+        canvas { 
+            display: block; 
+        }
     </style>
 </head>
 <body>
@@ -71,11 +77,10 @@ function drawMotionArrow(x, y, v) {
     const dir = v > 0 ? 1 : -1;
     const absV = Math.abs(v);
     
-    // FIXED DIMENSIONS (Length changes, thickness stays same)
-    const arrowHeight = 40;     // Total height of the arrow head
-    const shaftHeight = 15;     // Thickness of the line
-    const headLength = 30;      // Length of the triangle tip
-    const totalLength = absV;   // Total length scales with velocity
+    const arrowHeight = 40;   
+    const shaftHeight = 15;   
+    const headLength = 30;    
+    const totalLength = absV;   
     
     const shaftLength = Math.max(0, totalLength - headLength);
 
@@ -83,12 +88,10 @@ function drawMotionArrow(x, y, v) {
     ctx.translate(x, y);
     ctx.fillStyle = '#000';
 
-    // Draw Shaft (The rectangle part)
     ctx.beginPath();
     ctx.rect(0, -shaftHeight / 2, shaftLength * dir, shaftHeight);
     ctx.fill();
 
-    // Draw Head (The triangle part)
     const headStartX = shaftLength * dir;
     ctx.beginPath();
     ctx.moveTo(headStartX, -arrowHeight / 2);
@@ -97,7 +100,6 @@ function drawMotionArrow(x, y, v) {
     ctx.closePath();
     ctx.fill();
 
-    // Text Label
     ctx.font = 'bold 24px Arial';
     ctx.textAlign = 'center';
     ctx.fillText('Движение', (totalLength / 2) * dir, -arrowHeight / 2 - 10);
