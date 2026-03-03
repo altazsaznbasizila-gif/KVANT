@@ -46,8 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "<b>Много внимавай</b> - не смесвай определенията за <i>моментна и средна скорост</i>! Прочети тънката разлика между определенията им и виж разликава във формулите.",
         ],
         section6: [
-            "Виж как се намира мерната единица на ускорението: <br> $$[a] = \\frac{[v]}{[t]} = \\frac{m/s}{s} = m/s^2$$"
-        ],
+            "Ускорението е величина... <br> $$[a] = \\frac{[v]}{[t]} = \\frac{m/s}{s} = m/s^2$$"        ],
         section7: [
             "Когато едно движение има ускорение, то се разделя на тези двата вида в жълтото квадратче"
         ]
@@ -142,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         nextBtn.style.display = texts[id].length > 1 ? 'block' : 'none';
                     }
 
-                    // ДОБАВЕНО ТУК: Обновява формулите веднага при скрол
                     if (window.MathJax) {
                         MathJax.typesetPromise([textElement]);
                     }
