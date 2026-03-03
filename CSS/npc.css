@@ -1,15 +1,14 @@
 .sidebar-header {
-    justify-content: space-between;
+    position: sticky;
+    top: 0;           
+    z-index: 100;    
+    background-color: rgb(255, 255, 255);
+    padding-left: 60px;
+    padding-bottom: 10px;
     border-bottom: 4px solid #adadad;
+    border-right: 4px solid #e7e7e7;
 }
 
-.sidebar-header::after {
-    display: flex;
-    content: " ";
-    width: 18.5vw;
-    margin-bottom: 0.26vw;
-    border-bottom: 4px solid #adadad;
-}
 
 
 .sidebar h2 {
@@ -50,6 +49,8 @@
     height: 100vh;
     overflow-y: auto;
     padding: 1.3vw;
+    padding-top: 0vw;
+    padding-left: 0px;
     padding-bottom: 30vw;
     box-sizing: border-box;
     display: flex;
@@ -109,6 +110,7 @@
     display: flex !important;
     flex-wrap: wrap !important;
     align-items: flex-start !important;
+    padding-left: 12px;
     text-decoration: none;
     color: #333333;
     border-radius: 0.41vw;
