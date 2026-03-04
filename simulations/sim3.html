@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Симулация Движение</title>
     <style>
-        body { margin: 0; 
+        body { 
+            margin: 0; 
             overflow: hidden; 
             background: #99d9ea; 
             font-family: 'Arial Black', sans-serif; 
@@ -23,49 +24,50 @@
 const canvas = document.getElementById('sim');
 const ctx = canvas.getContext('2d');
 
-let width, height;
-let velocity = -180; 
+let width, height, s;
+let velocity = -150; 
 let isDragging = false;
 
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    s = Math.min(width, height) / 400; 
 }
 
 function drawCar(x, y) {
     ctx.save();
     ctx.translate(x, y);
-    ctx.strokeStyle = '#000';
-    ctx.lineWidth = 4;
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 3 * s;
 
     ctx.fillStyle = '#2d3436';
-    [ -40, 40 ].forEach(off => {
+    [ -40 * s, 40 * s ].forEach(off => {
         ctx.beginPath();
-        ctx.arc(off, 25, 22, 0, Math.PI * 2);
+        ctx.arc(off, 25 * s, 22 * s, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
     });
 
     ctx.fillStyle = '#d63031';
     ctx.beginPath();
-    ctx.roundRect(-75, -10, 150, 45, 10);
+    ctx.roundRect(-75 * s, -10 * s, 150 * s, 45 * s, 10 * s);
     ctx.fill();
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.roundRect(-45, -38, 90, 30, [20, 20, 0, 0]);
+    ctx.roundRect(-45 * s, -38 * s, 90 * s, 30 * s, [20 * s, 20 * s, 0, 0]);
     ctx.fill();
     ctx.stroke();
 
     ctx.fillStyle = '#81ecec';
-    ctx.fillRect(-35, -30, 35, 18);
-    ctx.fillRect(5, -30, 35, 18);
-    ctx.strokeRect(-35, -30, 35, 18);
-    ctx.strokeRect(5, -30, 35, 18);
+    ctx.fillRect(-35 * s, -30 * s, 35 * s, 18 * s);
+    ctx.fillRect(5 * s, -30 * s, 35 * s, 18 * s);
+    ctx.strokeRect(-35 * s, -30 * s, 35 * s, 18 * s);
+    ctx.strokeRect(5 * s, -30 * s, 35 * s, 18 * s);
 
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = '#000000';
     ctx.beginPath();
-    ctx.arc(0, 10, 6, 0, Math.PI * 2);
+    ctx.arc(0, 10 * s, 6 * s, 0, Math.PI * 2);
     ctx.fill();
     
     ctx.restore();
@@ -77,9 +79,9 @@ function drawMotionArrow(x, y, v) {
     const dir = v > 0 ? 1 : -1;
     const absV = Math.abs(v);
     
-    const arrowHeight = 40;   
-    const shaftHeight = 15;   
-    const headLength = 30;    
+    const arrowHeight = 30 * s;   
+    const shaftHeight = 10 * s;   
+    const headLength = 40 * s;    
     const totalLength = absV;   
     
     const shaftLength = Math.max(0, totalLength - headLength);
@@ -100,51 +102,61 @@ function drawMotionArrow(x, y, v) {
     ctx.closePath();
     ctx.fill();
 
-    ctx.font = 'bold 24px Arial';
+    ctx.font = `bold ${18 * s}px Arial`;
     ctx.textAlign = 'center';
-    ctx.fillText('Движение', (totalLength / 2) * dir, -arrowHeight / 2 - 10);
+    ctx.fillText('Движение', (totalLength / 2) * dir, -arrowHeight / 2 - 5 * s);
     
     ctx.restore();
 }
 
 function drawVArrow(x, y, v) {
     const endX = x + v;
-    ctx.lineWidth = 3;
-    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 3 * s;
+    ctx.strokeStyle = '#000000';
 
     ctx.beginPath();
-    ctx.moveTo(x, y + 10);
-    ctx.lineTo(endX, y + 10);
+    ctx.moveTo(x, y + 10 * s);
+    ctx.lineTo(endX, y + 10 * s);
     ctx.stroke();
 
     const dir = v > 0 ? 1 : -1;
     ctx.beginPath();
-    ctx.moveTo(endX, y + 10);
-    ctx.lineTo(endX - 15 * dir, y);
-    ctx.lineTo(endX - 15 * dir, y + 20);
+    ctx.moveTo(endX, y + 10 * s);
+    ctx.lineTo(endX - 15 * s * dir, y);
+    ctx.lineTo(endX - 15 * s * dir, y + 20 * s);
     ctx.closePath();
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = '#000000';
     ctx.fill();
 
-    ctx.font = 'italic bold 28px Arial';
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.roundRect(x + v/2 - 20 * s, y - 35 * s, 40 * s, 37 * s, 10 * s); 
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.font = `bold ${24 * s}px Arial`;
     ctx.textAlign = 'center';
-    ctx.fillText('V', x + v/2, y - 5);
+    ctx.fillStyle = 'black';
+    ctx.fillText('V', x + v/2, y - 8 * s);
 }
 
 function render() {
     ctx.clearRect(0, 0, width, height);
     
     const carX = width / 2;
-    const carY = height * 0.7;
+    const carY = height * 0.6;
 
     ctx.fillStyle = '#e9d1af';
-    ctx.fillRect(0, carY + 45, width, height);
-    ctx.strokeStyle = '#000';
-    ctx.lineWidth = 4;
-    ctx.strokeRect(-10, carY + 45, width + 20, 1);
+    ctx.fillRect(0, carY + 45 * s, width, height);
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 4 * s;
+    ctx.beginPath();
+    ctx.moveTo(0, carY + 45 * s);
+    ctx.lineTo(width, carY + 45 * s);
+    ctx.stroke();
 
     drawCar(carX, carY);
-    drawMotionArrow(carX, carY - 130, velocity);
+    drawMotionArrow(carX, carY - 100 * s, velocity);
     drawVArrow(carX, carY, velocity);
 
     requestAnimationFrame(render);
@@ -153,21 +165,22 @@ function render() {
 canvas.addEventListener('mousedown', (e) => {
     const carX = width / 2;
     const handleX = carX + velocity;
-    const dist = Math.sqrt((e.clientX - handleX)**2 + (e.clientY - (height * 0.7 + 10))**2);
-    if (dist < 35) isDragging = true;
+    const dist = Math.sqrt((e.clientX - handleX)**2 + (e.clientY - (height * 0.6 + 10 * s))**2);
+    if (dist < 40 * s) isDragging = true;
 });
 
 window.addEventListener('mousemove', (e) => {
     if (isDragging) {
         velocity = e.clientX - (width / 2);
-        if (velocity > 400) velocity = 400;
-        if (velocity < -400) velocity = -400;
+        const limit = width * 0.4;
+        if (velocity > limit) velocity = limit;
+        if (velocity < -limit) velocity = -limit;
     }
     
     const carX = width / 2;
     const handleX = carX + velocity;
-    const dist = Math.sqrt((e.clientX - handleX)**2 + (e.clientY - (height * 0.7 + 10))**2);
-    canvas.style.cursor = (dist < 35 || isDragging) ? 'pointer' : 'default';
+    const dist = Math.sqrt((e.clientX - handleX)**2 + (e.clientY - (height * 0.6 + 10 * s))**2);
+    canvas.style.cursor = (dist < 40 * s || isDragging) ? 'pointer' : 'default';
 });
 
 window.addEventListener('mouseup', () => isDragging = false);

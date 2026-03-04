@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         nextBtn.style.display = 'none';
                         textElement.innerHTML = "Виж сега... когато едно тяло изменя положението си <i>(тоест то се мести и си променя началната точка)</i>, след някакъв период от време, то това се нарича Механично движение.";
                     } else if (id === "section4") {
-                        textElement.innerHTML = "Ето и една примерна задача, която да решиш. Успех! <br> <button id='npc-hints-btn' style='background:#0a58ca; color:white; border:none; padding:5px 10px; border-radius:5px; margin-top:10px; cursor:pointer;'>Насоки</button>";
+                        textElement.innerHTML = "Ето и една примерна задача, която да решиш. Успех! <br> <button id='npc-hints-btn' style='background:#0a58ca; color:white; border:none; padding:5px 10px; border-radius:5px; margin-top:10px; cursor:pointer; font-size: 1vw ;width: 5.8vw; height: 2.2vw;'>Насоки</button>";
                         nextBtn.style.display = 'none';
                     } else if (texts[id]) {
                         textElement.innerHTML = texts[id][0];

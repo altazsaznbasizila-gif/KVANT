@@ -141,6 +141,7 @@ iframe {
     align-items: center;
     gap: 10px;
     list-style: none;
+    font-size: 1.4vw;
 }
 
 .lesson-folder summary::-webkit-details-marker,
