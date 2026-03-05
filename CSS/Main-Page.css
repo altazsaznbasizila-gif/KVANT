@@ -284,27 +284,69 @@ body {
 }
 
 .topic-card.mechanics { 
-    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%), url('../Images/mech1.png'), url('../Images/mech2.png'); 
+    background-image: linear-gradient(to right, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,1) 35%, 
+    rgba(255,255,255,1) 65%, 
+    rgba(255,255,255,0) 100%), 
+    
+    url('../Images/mech1.png'), 
+    url('../Images/mech2.png'); 
 }
 
 .topic-card.electricity { 
-    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%), url('../Images/elec1.png'), url('../Images/elec2.png'); 
+    background-image: linear-gradient(to right, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,1) 35%, 
+    rgba(255,255,255,1) 65%, 
+    rgba(255,255,255,0) 100%), 
+    
+    url('../Images/elec1.png'), 
+    url('../Images/elec2.png'); 
 }
 
 .topic-card.space { 
-    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%), url('../Images/atom1.png'), url('../Images/atom2.png'); 
+    background-image: linear-gradient(to right, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,1) 35%, 
+    rgba(255,255,255,1) 65%, 
+    rgba(255,255,255,0) 100%), 
+    
+    url('../Images/atom1.png'), 
+    url('../Images/atom2.png'); 
 }
 
 .topic-card.light-sound { 
-    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%), url('../Images/svet1.png'), url('../Images/svet2.png'); 
+    background-image: linear-gradient(to right,
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,1) 35%, 
+    rgba(255,255,255,1) 65%, 
+    rgba(255,255,255,0) 100%), 
+    
+    url('../Images/svet1.png'), 
+    url('../Images/svet2.png'); 
 }
 
-.topic-card:hover { transform: translateY(-5px); }
+.topic-card:hover { 
+    transform: translateY(-5px); 
+}
 
-.topic-card.mechanics:hover { box-shadow: 0 10px 30px rgba(10, 88, 202, 0.15); border-color: #0a58ca; }
-.topic-card.electricity:hover { box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2); border-color: #ffc107; }
-.topic-card.space:hover { box-shadow: 0 10px 30px rgba(103, 58, 183, 0.25); border-color: #673ab7; }
-.topic-card.light-sound:hover { box-shadow: 0 10px 30px rgba(0, 188, 212, 0.25); border-color: #00bcd4; }
+.topic-card.mechanics:hover { 
+    box-shadow: 0 10px 30px rgba(10, 88, 202, 0.15); 
+    border-color: #0a58ca; 
+}
+.topic-card.electricity:hover { 
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2); 
+    border-color: #ffc107; 
+}
+.topic-card.space:hover { 
+    box-shadow: 0 10px 30px rgba(103, 58, 183, 0.25); 
+    border-color: #673ab7; 
+}
+.topic-card.light-sound:hover { 
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.25); 
+    border-color: #00bcd4; 
+}
 
 .topic-card h2 { 
     font-size: clamp(16px, 1.25vw, 26px); 
