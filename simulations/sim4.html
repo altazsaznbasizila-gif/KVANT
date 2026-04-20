@@ -302,11 +302,11 @@ html {
             document.getElementById('val-t').innerText = t; 
 
             formulaDisplay.innerHTML = `
-                <div>v = v₀ + a·t</div>
-                <div>v = ${v0} + ${a}·${t} = ${vFinal} m/s</div>
+                <div>v = v₀ + a * t</div>
+                <div>v = ${v0} + ${a} * ${t} = ${vFinal} m/s</div>
                 <hr style="border:none; border-top:0.1em solid #ddd; margin: 0.5em 0;">
-                <div>s = v₀·t + ½·a·t²</div>
-                <div>s = ${v0}·${t} + ½·${a}·${t}² = ${distance} m</div>
+                <div>s = v₀*t + ½ * a * t²</div>
+                <div>s = ${v0} * ${t} + ½ * ${a} * ${t}² = ${distance} m</div>
             `;
 
             const visualGap = Math.min(distance * 0.1, 45); 
@@ -352,7 +352,6 @@ html {
         window.addEventListener('resize', handleResize);
         [inputVo, inputT, inputA].forEach(el => el.addEventListener('input', update));
 
-        // Mild idle shake for Car 1
         gsap.to(car1, { y: 0.8, x: 0.4, duration: 0.15, repeat: -1, yoyo: true, ease: "none" });
         
         handleResize();

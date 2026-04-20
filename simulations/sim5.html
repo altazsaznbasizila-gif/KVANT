@@ -355,11 +355,11 @@ html {
                 `;
             } else {
                 formulaDisplay.innerHTML = `
-                    <div>v = v₀ - a·t</div>
-                    <div>v = ${v0} - ${a}·${t_user} = ${vFinal} m/s</div>
+                    <div>v = v₀ - a*t</div>
+                    <div>v = ${v0} - ${a} * ${t_user} = ${vFinal} m/s</div>
                     <hr style="border:none; border-top:0.1em solid #ddd; margin: 0.5em 0;">
-                    <div>s = v₀·t - ½·a·t²</div>
-                    <div>s = ${v0}·${t_user} - ½·${a}·${t_user}² = ${s} m</div>
+                    <div>s = v₀ * t - ½ * a * t²</div>
+                    <div>s = ${v0} * ${t_user} - ½·${a} * ${t_user}² = ${s} m</div>
                 `;
             }
 
@@ -389,6 +389,7 @@ html {
 
         handleResize();
         update();
+        
     </script>
 </body>
 </html>

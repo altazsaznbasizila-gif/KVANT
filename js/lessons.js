@@ -163,3 +163,4 @@ function toggleTaskSolution() {
         btnText.innerHTML = "Решение";
     }
 }
+
