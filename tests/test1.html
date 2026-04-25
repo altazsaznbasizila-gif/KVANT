@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/test.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="quiz-container">
+    <h1>Тест</h1>
+    <div id="progress">Макс: 30т</div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">1. What is the capital of Bulgaria?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> туфф</label>
+                <label><input type="radio" name="q1" value="1.5"> туфф</label>
+                <label><input type="radio" name="q1" value="0"> туфф</label>
+                <label><input type="radio" name="q1" value="0"> туфф</label>
+            </div>
+        </div>
+
+        <div class="question-block complex">
+            <p class="question-text">Равноускорително</p>
+            
+            <div class="sub-question">
+                <p>A) Нз</p>
+                <label><input type="radio" name="q13a" value="2"> 5</label>
+                <label><input type="radio" name="q13a" value="0"> 10</label>
+            </div>
+
+            <div class="sub-question">
+                <p>B) Туффингтон</p>
+                <label><input type="radio" name="q13b" value="2"> 3</label>
+                <label><input type="radio" name="q13b" value="0"> 4</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="calculateGrade()" class="submit-btn">Финиширай</button>
+    </form>
+
+    <div id="result-box" class="hidden">
+        <h2 id="score-text"></h2>
+        <h1 id="grade-text"></h1>
+    </div>
+</div>
 </body>
 </html>
