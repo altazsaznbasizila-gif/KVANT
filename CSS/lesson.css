@@ -184,6 +184,19 @@ iframe {
     color: #0a58ca;
 }
 
+.test-buttons{
+    background-color: #168cbb;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 1vw;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5vw;
+    margin: -2vh 0 0 50vw !important;
+    position: absolute;
+}
+
 @media (max-width: 1024px) {
     .main {
         margin-left: 0;

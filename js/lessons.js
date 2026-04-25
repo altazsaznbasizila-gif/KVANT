@@ -48,7 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         section6: [
             "Ускорението е величина... <br> $$[a] = \\frac{[v]}{[t]} = \\frac{m/s}{s} = m/s^2$$"        ],
         section7: [
-            "Когато едно движение има ускорение, то се разделя на тези двата вида в жълтото квадратче"
+            "Когато едно движение има ускорение, то се разделя на тези двата вида, които ги пише в жълтото квадратче",
+            "Разгледай двете симулации за <i>равноускорително</i> и <i>равнозакъснително движение</i> - виж промяната в резулата при намирането на <b>пътя</b> и на <b>скоростта</b> след промяна на една от величините във формулите",
+        ],
+         section8: [
+            "Внимателно чети задачите, за да разбереш дали движещото се тяло <i>има</i> начална скорост, или <i>няма</i>, защото това променя формулата при заместване!"
         ]
     };
 
@@ -117,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('scroll', function() {
-        const sections = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'];
+        const sections = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7', 'section8'];
         const triggerPoint = window.innerHeight / 2;
 
         sections.forEach(id => {
@@ -163,4 +167,10 @@ function toggleTaskSolution() {
         btnText.innerHTML = "Решение";
     }
 }
+
+
+
+
+
+
 
