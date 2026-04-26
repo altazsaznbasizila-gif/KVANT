@@ -1,70 +1,87 @@
 body { 
     font-family: sans-serif; 
     background: #f0f2f5; 
-    padding: 20px; 
+    padding: 1vw 2vw; 
 }
 
 .quiz-container {
-    max-width: 800px;
-    margin: auto;
+    max-width: 60vw;
+    margin: 2vw auto; 
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 2vw 3vw; 
+    border-radius: 1vw; 
+    box-shadow: 0 0.5vw 1.5vw rgba(0,0,0,0.1);
 }
 
 .question-block {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 2vw; 
+    padding-bottom: 2vw;
     border-bottom: 1px solid #eee;
 }
 
 .question-text { 
     font-weight: bold; 
-    font-size: 1.1rem; 
+    font-size: 1.5vw; 
 }
 
 .options label {
     display: block;
-    padding: 10px;
+    padding: 1vw 1.5vw;
     background: #f9f9f9;
-    margin: 5px 0;
-    border-radius: 5px;
+    margin: 0.5vw 0;
+    border-radius: 0.5vw;
     cursor: pointer;
+    font-size: 1.2vw;
 }
 
-.complex { background: #f8faff; 
-    padding: 20px; 
-    border-radius: 10px; 
+.complex { 
+    background: #f8faff; 
+    padding: 1.5vw 2.5vw; 
+    border-radius: 1vw; 
     border: 1px solid #dae5f5; 
 }
 
 .sub-question {
-    margin-left: 20px;
-    margin-top: 15px;
-    padding: 10px;
-    border-left: 3px solid #4a90e2;
+    margin-left: 2vw;
+    margin-top: 1.5vw;
+    padding: 0.5vw 1.5vw;
+    border-left: 0.3vw solid #4a90e2;
 }
 
 .submit-btn {
-    width: 100%;
-    padding: 15px;
+    width: 10vw;
+    padding: 1vw;
     background: #28a745;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
+    display: block;
+    margin: 2vw auto 0 auto;
 }
 
 #result-box {
-    margin-top: 30px;
+    margin-top: 2vw;
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 2vw;
+    border-radius: 1vw;
     background: #e9ecef;
 }
 
 .hidden { 
     display: none; 
+}
+
+label{
+    font-size: 1vw;
+    display: flex;
+    padding-top: 0.4vw;
+}
+
+p{
+    font-size: 1.05vw;
+}
+
+div#progress{
+    font-size: 1vw;
 }

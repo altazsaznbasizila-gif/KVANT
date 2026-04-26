@@ -193,8 +193,6 @@ iframe {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5vw;
-    margin: -2vh 0 0 50vw !important;
-    position: absolute;
 }
 
 @media (max-width: 1024px) {
@@ -203,3 +201,4 @@ iframe {
         padding: 20px;
     }
 }
+

@@ -4,23 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/test.css">
+    
     <title>Document</title>
 </head>
 <body>
     <div class="quiz-container">
     <h1>Тест</h1>
-    <div id="progress">Макс: 30т</div>
+    <div id="progress">Максимум точки: 30т</div>
 
     <form id="quizForm">
         <div class="question-block">
-            <p class="question-text">1. What is the capital of Bulgaria?</p>
+            <p class="question-text">1. Коя е правилната формула на закона за скоростта при равноускорителното движение? !!(Vo>0)!!</p>
             <div class="options">
-                <label><input type="radio" name="q1" value="0"> туфф</label>
-                <label><input type="radio" name="q1" value="1.5"> туфф</label>
-                <label><input type="radio" name="q1" value="0"> туфф</label>
-                <label><input type="radio" name="q1" value="0"> туфф</label>
-            </div>
+                <label><input type="radio" name="q1" value="0"> V = Vo - a*t</label>
+                <label><input type="radio" name="q1" value="1.5">  V = Vo + a*t</label>
+                <label><input type="radio" name="q1" value="0"> V = a*t<sup>2</sup></label>
+                <label><input type="radio" name="q1" value="0"> V = (a*t<sup>2</sup>) / 2</label>
+                </div>
         </div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">2. Коя е правилната формула на закона за пътя при равноускорителното движение? !!(Vo>0)!!</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="1.5"> S = Vo * t + (a*t<sup>2</sup>) / 2</label>
+                <label><input type="radio" name="q1" value="0">  S = (a*t<sup>2</sup>) / 2</label>
+                <label><input type="radio" name="q1" value="0"> S = Vo + (a*t<sup>2</sup>) / 2<sup>2</sup></label>
+                <label><input type="radio" name="q1" value="0"> S = (a*t<sup>2</sup>) / 2</label>
+                </div>
+        </div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">2. Коя е мерната единица SI на ускорението?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> [a] = m/h</label>
+                <label><input type="radio" name="q1" value="0"> [a] = m/s</label>
+                <label><input type="radio" name="q1" value="1.5"> [a] = m/s<sup>2</sup></label>
+                <label><input type="radio" name="q1" value="0"> [a] = mJ/s<sup>2</sup></label>
+                </div>
+        </div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">2. Имаш ускорение а = 2.5m/s с начална скорост Vo = 15m/s и интервал от време Δt = 10s. Колко е крайната скорост?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> 19m/s</label>
+                <label><input type="radio" name="q1" value="0"> 36km/h</label>
+                <label><input type="radio" name="q1" value="1.5"> 40m/s</label>
+                <label><input type="radio" name="q1" value="0"> 6.12m/s</label>
+                </div>
+        </div>
+    
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">3. Вярно ли е твърдението: <i>"Ускорението е изменението на скорстта разделено на интервала от време"</i></p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="1.5"> Да</label>
+                <label><input type="radio" name="q1" value="0">  Не</label>
+                </div>
+        </div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">4. Вярно ли е твърдението: <i>"Ускорението характеризира бързината на движението в даден момент"</i></p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> Да</label>
+                <label><input type="radio" name="q1" value="1.5">  Не</label>
+                </div>
+        </div>
+
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">4. Вярно ли е твърдението: <i>"При намирането на ускорението (с помощта на "делта" величини) се изважда стойността на началната величина от стойността на крайната</i></p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> Да</label>
+                <label><input type="radio" name="q1" value="1.5">  Не</label>
+                </div>
+        </div>
+        
 
         <div class="question-block complex">
             <p class="question-text">Равноускорително</p>
@@ -38,7 +100,7 @@
             </div>
         </div>
 
-        <button type="button" onclick="calculateGrade()" class="submit-btn">Финиширай</button>
+        <button type="button" onclick="calculateGrade()" class="submit-btn">Предай теста</button>
     </form>
 
     <div id="result-box" class="hidden">
