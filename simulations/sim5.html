@@ -351,7 +351,7 @@ html {
                     <div>v = 0.0 m/s</div>
                     <hr style="border:none; border-top:0.1em solid #ddd; margin: 0.5em 0;">
                     <div>Спирачен път (s<sub>сп</sub>):</div>
-                    <div>s = v₀² / 2a = ${v0}² / (2·${a}) = ${s} m</div>
+                    <div>s = v₀² / (2a) = ${v0}² / (2*${a}) = ${s} m</div>
                 `;
             } else {
                 formulaDisplay.innerHTML = `
@@ -359,7 +359,7 @@ html {
                     <div>v = ${v0} - ${a} * ${t_user} = ${vFinal} m/s</div>
                     <hr style="border:none; border-top:0.1em solid #ddd; margin: 0.5em 0;">
                     <div>s = v₀ * t - ½ * a * t²</div>
-                    <div>s = ${v0} * ${t_user} - ½·${a} * ${t_user}² = ${s} m</div>
+                    <div>s = ${v0} * ${t_user} - ½*${a} * ${t_user}² = ${s} m</div>
                 `;
             }
 
