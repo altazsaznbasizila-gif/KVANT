@@ -1,177 +1,183 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/test.css">
-        <script src="../js/test.js"></script>
-    <title>Тест по Физика</title>
+    <script src="../js/test.js"></script>
+    <title>Document</title>
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Тест: Равноускорително движение</h1>
-        <div id="progress">Максимум точки: 30т</div>
+    <h1>Тест: Механично движение и Свободно падане</h1>
+    <div id="progress">Максимум точки: 30т</div>
 
-        <form id="quizForm">
-          
-            <div class="question-block">
-                <p class="question-text">1. Коя е правилната формула на закона за скоростта при равноускорителното движение? (Vo > 0)</p>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="0"> V = Vo - a*t</label>
-                    <label><input type="radio" name="q1" value="1.5"> V = Vo + a*t</label>
-                    <label><input type="radio" name="q1" value="0"> V = a*t²</label>
-                    <label><input type="radio" name="q1" value="0"> V = (a*t²) / 2</label>
-                </div>
+    <form id="quizForm">
+        <div class="question-block">
+            <p class="question-text">1. Какво представлява механичното движение?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="0"> Увеличаване на температурата на тялото</label>
+                <label><input type="radio" name="q1" value="1.5"> Изменение на взаимното положение на телата с времето</label>
+                <label><input type="radio" name="q1" value="0"> Химическа реакция между две вещества</label>
+                <label><input type="radio" name="q1" value="0"> Движение само в права линия</label>
             </div>
-
-          
-            <div class="question-block">
-                <p class="question-text">2. Коя е правилната формула на закона за пътя при равноускорителното движение? (Vo > 0)</p>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="1.5"> S = Vo * t + (a*t²) / 2</label>
-                    <label><input type="radio" name="q2" value="0"> S = (a*t²) / 2</label>
-                    <label><input type="radio" name="q2" value="0"> S = Vo + (a*t²) / 2</label>
-                    <label><input type="radio" name="q2" value="0"> S = V * t</label>
-                </div>
-            </div>
-
-            
-            <div class="question-block">
-                <p class="question-text">3. Коя е мерната единица SI на ускорението?</p>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="0"> [a] = m/h</label>
-                    <label><input type="radio" name="q3" value="0"> [a] = m/s</label>
-                    <label><input type="radio" name="q3" value="1.5"> [a] = m/s²</label>
-                    <label><input type="radio" name="q3" value="0"> [a] = km/s²</label>
-                </div>
-            </div>
-
-         
-            <div class="question-block">
-                <p class="question-text">4. Вярно ли е: "Ускорението е изменението на скоростта, разделено на интервала от време"?</p>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="1.5"> Да</label>
-                    <label><input type="radio" name="q4" value="0"> Не</label>
-                </div>
-            </div>
-
-          
-            <div class="question-block">
-                <p class="question-text">5. Вярно ли е: "Ускорението характеризира бързината на движението в даден момент"?</p>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="0"> Да</label>
-                    <label><input type="radio" name="q5" value="1.5"> Не</label>
-                </div>
-            </div>
-
-            
-            <div class="question-block">
-                <p class="question-text">6. Какво се случва със скоростта при равнозакъснително движение?</p>
-                <div class="options">
-                    <label><input type="radio" name="q6" value="1.5"> Намалява с равни интервали за равни времена</label>
-                    <label><input type="radio" name="q6" value="0"> Увеличава се постоянно</label>
-                    <label><input type="radio" name="q6" value="0"> Остава постоянна величина</label>
-                    <label><input type="radio" name="q6" value="0"> Скоростта става равна на ускорението</label>
-                </div>
-            </div>
-
-           
-            <div class="question-block">
-                <p class="question-text">7. Кое определение за спирачния път е винаги вярно?</p>
-                <div class="options">
-                    <label><input type="radio" name="q7" value="0"> Пътят при равномерно движение</label>
-                    <label><input type="radio" name="q7" value="0"> Цялото разстояние на движението</label>
-                    <label><input type="radio" name="q7" value="1.5"> Разстоянието, изминато от тялото до неговото пълно спиране</label>
-                    <label><input type="radio" name="q7" value="0"> Пътят, изминат само за 1 секунда</label>
-                </div>
-            </div>
-
-            <div class="question-block">
-                <p class="question-text">8. Вярно ли е: "Времето за спиране е времето, за което е изминат спирачният път"?</p>
-                <div class="options">
-                    <label><input type="radio" name="q8" value="1.5"> Да</label>
-                    <label><input type="radio" name="q8" value="0"> Не</label>
-                </div>
-            </div>
-
-          
-            <div class="question-block">
-                <p class="question-text">9. Ако ускорението е a = 0, какъв е видът на движението?</p>
-                <div class="options">
-                    <label><input type="radio" name="q9" value="0"> Равноускорително</label>
-                    <label><input type="radio" name="q9" value="1.5"> Равномерно и праволинейно</label>
-                    <label><input type="radio" name="q9" value="0"> Равнозакъснително</label>
-                    <label><input type="radio" name="q9" value="0"> Свободно падане</label>
-                </div>
-            </div>
-
-           
-            <div class="question-block">
-                <p class="question-text">10. Имаш a = 2.5m/s², Vo = 15m/s и t = 10s. Колко е крайната скорост V?</p>
-                <div class="options">
-                    <label><input type="radio" name="q10" value="0"> 19 m/s</label>
-                    <label><input type="radio" name="q10" value="1.5"> 40 m/s</label>
-                    <label><input type="radio" name="q10" value="0"> 25 m/s</label>
-                    <label><input type="radio" name="q10" value="0"> 37.5 m/s</label>
-                </div>
-            </div>
-
-           
-            <div class="question-block">
-                <p class="question-text">11. Намери спирачния път при Vo = 70m/s и време за спиране to = 14s.</p>
-                <div class="options">
-                    <label><input type="radio" name="q11" value="0"> 1.4 km</label>
-                    <label><input type="radio" name="q11" value="0"> 1470 m</label>
-                    <label><input type="radio" name="q11" value="1.5"> 0.49 km</label>
-                    <label><input type="radio" name="q11" value="0"> 980 m</label>
-                </div>
-            </div>
-
-            
-            <div class="question-block">
-                <p class="question-text">12. Ако едно тяло тръгва от състояние на покой, колко е неговата начална скорост Vo?</p>
-                <div class="options">
-                    <label><input type="radio" name="q12" value="1.5"> 0 m/s</label>
-                    <label><input type="radio" name="q12" value="0"> 1 m/s</label>
-                    <label><input type="radio" name="q12" value="0"> 9.8 m/s</label>
-                    <label><input type="radio" name="q12" value="0"> Не може да се определи</label>
-                </div>
-            </div>
-
-        
-            <div class="question-block complex">
-                <p class="question-text">13. Сложен въпрос (Теория и Практика):</p>
-                <div class="sub-question">
-                    <p>А) Под-въпрос 1 (Prompt)</p>
-                    <label><input type="radio" name="q13a" value="2"> Правилен (2т)</label>
-                    <label><input type="radio" name="q13a" value="0"> Грешен (0т)</label>
-                </div>
-                <div class="sub-question">
-                    <p>B) Под-въпрос 2 (Prompt)</p>
-                    <label><input type="radio" name="q13b" value="2"> Правилен (2т)</label>
-                    <label><input type="radio" name="q13b" value="0"> Грешен (0т)</label>
-                </div>
-            </div>
-
-            <div class="question-block complex">
-                <p class="question-text">14. Сложен въпрос (Графики):</p>
-                <div class="sub-question"><p>А) Prompt...</p></div>
-                <div class="sub-question"><p>B) Prompt...</p></div>
-            </div>
-
-            <div class="question-block complex">
-                <p class="question-text">15. Сложен въпрос (Анализ):</p>
-                <div class="sub-question"><p>А) Prompt...</p></div>
-                <div class="sub-question"><p>B) Prompt...</p></div>
-            </div>
-
-            <button type="button" onclick="calculateGrade()" class="submit-btn">Предай теста</button>
-        </form>
-
-        <div id="result-box" class="hidden">
-            <h2 id="score-text"></h2>
-            <h1 id="grade-text"></h1>
         </div>
+
+        <div class="question-block">
+            <p class="question-text">2. Какво наричаме "отправно тяло"?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="0"> Тяло, което винаги е в покой спрямо Слънцето</label>
+                <label><input type="radio" name="q2" value="1.5"> Тялото, спрямо което определяме движението на други тела</label>
+                <label><input type="radio" name="q2" value="0"> Най-тежкото тяло в една система</label>
+                <label><input type="radio" name="q2" value="0"> Линията, по която се движи дадено тяло</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">3. Как се разделя движението според вида на неговата траектория?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="1.5"> Праволинейно и криволинейно</label>
+                <label><input type="radio" name="q3" value="0"> Равномерно и неравномерно</label>
+                <label><input type="radio" name="q3" value="0"> Бързо и бавно</label>
+                <label><input type="radio" name="q3" value="0"> Ускорено и закъснително</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">4. Кое от твърденията за равномерното праволинейно движение е вярно?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="0"> Скоростта се променя постоянно</label>
+                <label><input type="radio" name="q4" value="1.5"> За равни интервали време се изминава равен път</label>
+                <label><input type="radio" name="q4" value="0"> Траекторията е окръжност</label>
+                <label><input type="radio" name="q4" value="0"> Средната скорост винаги е нула</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">5. Коя е правилната формула за средна скорост (Vср)?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="0"> Vср = S * Δt</label>
+                <label><input type="radio" name="q5" value="0"> Vср = a * t</label>
+                <label><input type="radio" name="q5" value="1.5"> Vср = S / Δt</label>
+                <label><input type="radio" name="q5" value="0"> Vср = (Vo + V) / t</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">6. Кой уред в автомобила измерва неговата моментна скорост?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="0"> Термометър</label>
+                <label><input type="radio" name="q6" value="1.5"> Скоростомер</label>
+                <label><input type="radio" name="q6" value="0"> Хронометър</label>
+                <label><input type="radio" name="q6" value="0"> Километраж (одометър)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">7. Скоростта е векторна величина. Това означава, че тя има:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="0"> Само големина</label>
+                <label><input type="radio" name="q7" value="1.5"> Големина и посока</label>
+                <label><input type="radio" name="q7" value="0"> Само посока</label>
+                <label><input type="radio" name="q7" value="0"> Цвят и форма</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">8. Къде може да се наблюдава истинско свободно падане?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="0"> Във въздушна среда</label>
+                <label><input type="radio" name="q8" value="1.5"> Във вакуум (безвъздушно пространство)</label>
+                <label><input type="radio" name="q8" value="0"> В басейн с вода</label>
+                <label><input type="radio" name="q8" value="0"> Само на Луната</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">9. Приблизително колко е земното ускорение (g) близо до земната повърхност?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="0"> 1.6 m/s²</label>
+                <label><input type="radio" name="q9" value="0"> 5 m/s²</label>
+                <label><input type="radio" name="q9" value="1.5"> 9.8 m/s²</label>
+                <label><input type="radio" name="q9" value="0"> 100 m/s²</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">10. Ако две тела с различна маса падат свободно във вакуум, те ще:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="1.5"> Паднат едновременно с еднаква скорост</label>
+                <label><input type="radio" name="q10" value="0"> По-тежкото ще падне първо</label>
+                <label><input type="radio" name="q10" value="0"> По-лекото ще падне първо</label>
+                <label><input type="radio" name="q10" value="0"> Ще останат да левитират</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">11. Коя е формулата за пътя (S) при свободно падане (без начална скорост)?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="0"> S = V * t</label>
+                <label><input type="radio" name="q11" value="1.5"> S = (g * t²) / 2</label>
+                <label><input type="radio" name="q11" value="0"> S = g * t</label>
+                <label><input type="radio" name="q11" value="0"> S = Vo * t</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-text">12. Вярно ли е, че средната скорост е равна на моментната при неравномерно движение?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="0"> Да</label>
+                <label><input type="radio" name="q12" value="1.5"> Не</label>
+            </div>
+        </div>
+
+        <div class="question-block complex">
+            <p class="question-text">13. Автомобил пътува от София до Пловдив (150 km). Първите 50 km изминава за 0.5 h, а останалите 100 km за 1.5 h.</p>
+            <div class="sub-question">
+                <p>А) Колко е общото време на пътуването (h)?</p>
+                <input type="number" class="open-answer" data-answer="2" placeholder="Часове...">
+            </div>
+            <div class="sub-question">
+                <p>B) Пресметнете средната скорост Vср (km/h) за цялото разстояние:</p>
+                <input type="number" class="open-answer" data-answer="75" placeholder="km/h...">
+            </div>
+        </div>
+
+        <div class="question-block complex">
+            <p class="question-text">14. Камък пада свободно от висока скала в продължение на 4 секунди (приемаме g = 10 m/s²).</p>
+            <div class="sub-question">
+                <p>А) Каква скорост (m/s) ще достигне камъкът точно преди удара в земята?</p>
+                <input type="number" class="open-answer" data-answer="40" placeholder="Скорост...">
+            </div>
+            <div class="sub-question">
+                <p>B) От каква височина (m) е паднал камъкът?</p>
+                <input type="number" class="open-answer" data-answer="80" placeholder="Метри...">
+            </div>
+        </div>
+
+        <div class="question-block complex">
+            <p class="question-text">15. Топка пада свободно от височина 20 метра (приемаме g = 10 m/s²).</p>
+            <div class="sub-question">
+                <p>А) Колко секунди (s) продължава падането?</p>
+                <input type="number" class="open-answer" data-answer="2" placeholder="Секунди...">
+            </div>
+            <div class="sub-question">
+                <p>B) Ако пуснем топката от 2 пъти по-голяма височина, времето ще се увеличи ли 2 пъти?</p>
+                <div class="options">
+                    <label><input type="radio" name="q15b" value="0"> Да (времето е правопропорционално на височината)</label>
+                    <label><input type="radio" name="q15b" value="2"> Не (времето зависи от корен квадратен от височината)</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" onclick="calculateGrade()" class="submit-btn">Предай теста</button>
+    </form>
+
+    <div id="result-box" class="hidden">
+        <h2 id="score-text"></h2>
+        <h1 id="grade-text"></h1>
     </div>
+</div>
+</form>
 </body>
 </html>

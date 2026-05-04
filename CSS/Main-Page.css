@@ -167,17 +167,17 @@ body {
 .nav-link {
     font: bold 1.2vw sans-serif;
     text-decoration: none;
-    color: gray;
+    color: rgb(72, 134, 170);
     margin-right: 0.9vw;
     padding: 0.5vw;
     border-radius: 10%;
-    border: 0.5vw outset gray;
+    border: 0.5vw outset rgb(96, 175, 221);
 }
 
 
 
 .dropbtn {
-    background: #0a58ca;
+    background: #0a84ca;
     color: white;
     border: none;
     padding: clamp(8px, 0.63vw, 12px) clamp(12px, 1.04vw, 20px);
