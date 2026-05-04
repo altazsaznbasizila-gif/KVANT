@@ -165,17 +165,16 @@ body {
 }
 
 .nav-link {
+    font: bold 1.2vw sans-serif;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 1.3vw;
-    font-size: clamp(13px, 0.83vw, 17px);
-    transition: 0.3s;
+    color: gray;
+    margin-right: 0.9vw;
+    padding: 0.5vw;
+    border-radius: 10%;
+    border: 0.5vw outset gray;
 }
 
-.nav-link:hover {
-    color: #0a58ca;
-}
+
 
 .dropbtn {
     background: #0a58ca;
