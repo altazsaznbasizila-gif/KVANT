@@ -41,24 +41,28 @@ function calculateGrade() {
     let color = "#ff0019";
     let typeText = "";
 
-    if (totalPoints >= 26.5) {
-        grade = 6;
+if (totalPoints >= 26.5) {
+        grade = 6.00;
         color = "#00ff3c";
         typeText = 'Отличен';
+    } else if (totalPoints >= 23) {
+        grade = 5.50;
+        color = "#00ff3c"; 
+        typeText = 'Отличен';
     } else if (totalPoints >= 22.5) {
-        grade = 5;
+        grade = 5.00;
         color = "#00ddff";
         typeText = 'Много Добър';
     } else if (totalPoints >= 16.5) {
-        grade = 4;
+        grade = 4.00;
         color = "#ffbf00";
         typeText = 'Добър';
     } else if (totalPoints >= 11.5) {
-        grade = 3;
+        grade = 3.00;
         color = "#ff7300";
         typeText = 'Среден';
     } else {
-        grade = 2;
+        grade = 2.00;
         color = "#ff0019";
         typeText = 'Слаб';
     }
@@ -74,4 +78,54 @@ function calculateGrade() {
     gradeDisplay.style.color = color;
 
     resultBox.scrollIntoView({ behavior: 'smooth' });
+
+    localStorage.setItem('test1Grade', grade);
+}
+
+
+let testGrades = {
+    test1: 0.00,
+    test2: 0.00
+};
+
+function checkSavedUnlocks() {
+    const savedGrade1 = localStorage.getItem('test1Grade');
+    
+    if (savedGrade1 !== null) {
+        let g1 = parseFloat(savedGrade1);
+        
+        if (g1 >= 6.00) {
+            unlock("reward1");
+            unlock("reward2");
+        } else if (g1 >= 5.50) {
+            unlock("reward2");
+        }
+    }
+}
+
+function unlock(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.classList.remove("locked");
+        element.classList.add("unlocked");
+
+        const img = element.querySelector('img');
+        if (img) {
+            img.src = "../Images/skill_unlock.png";
+            img.style.width = "7vw";
+            img.style.height = "3.5vw";
+        }
+    }
+}
+
+window.addEventListener('DOMContentLoaded', checkSavedUnlocks);
+
+function finishTest1(grade) {
+    testGrades.test1 = grade;
+    checkUnlocks();
+}
+
+function finishTest2(grade) {
+    testGrades.test2 = grade;
+    checkUnlocks();
 }

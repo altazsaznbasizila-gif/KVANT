@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симулация: Свободно Падане</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --ball-color: #e74c3c;
+            --sky-blue: #a2d2ff;
+            --ground-color: #e9d1af;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--sky-blue);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8vw; 
+        }
+
+        .controls {
+            top: 1vw;
+            position: absolute;
+            display: flex;
+            gap: 2vw;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5vw 1.5vw;
+            border: 0.1vw solid #2c3e50;
+            border-radius: 0.5vw;
+            z-index: 100;
+            box-shadow: 0 0.2vw 0.8vw rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        select, input[type=range] { 
+            cursor: pointer; 
+            margin-top: 0.2vw;
+        }
+
+        select {
+            padding: 0.1vw 0.5vw;
+            font-size: 0.8vw;
+            border-radius: 0.3vw;
+            border: 0.1vw solid #bdc3c7;
+        }
+
+        input[type=range] { width: 8vw; }
+
+        .scene {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            height: 3vw;
+            background: var(--ground-color);
+            border-top: 0.15vw solid #000;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .simulation-container {
+            position: absolute;
+            top: 7vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .formula-board {
+            position: absolute;
+            left: -18vw;
+            top: 0;
+            background: #ffffff;
+            border: 0.12vw solid #314457;
+            padding: 0.7vw;
+            border-radius: 0.4vw;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            box-shadow: 0.2vw 0.2vw 0px rgba(0,0,0,0.1);
+            min-width: 13vw;
+        }
+
+        .object {
+            width: 2.4vw;
+            height: 2.4vw;
+            background: var(--ball-color);
+            border: 0.12vw solid #000;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: inset -0.2vw -0.2vw 0.4vw rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .object::after {
+            content: '';
+            width: 0.5vw;
+            height: 0.5vw;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            position: absolute;
+            top: 0.3vw;
+            left: 0.4vw;
+        }
+
+        .height-gap {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 5vw;
+            justify-content: center;
+        }
+
+        .vertical-arrow {
+            width: 0.2vw;
+            background: #2c3e50;
+            position: relative;
+        }
+
+        .vertical-arrow::before, .vertical-arrow::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 0.4vw solid transparent;
+            border-right: 0.4vw solid transparent;
+        }
+
+        .vertical-arrow::before {
+            top: -0.1vw;
+            border-bottom: 0.5vw solid #2c3e50;
+        }
+
+        .vertical-arrow::after {
+            bottom: -0.1vw;
+            border-top: 0.5vw solid #2c3e50;
+        }
+
+        .label-h {
+            position: absolute;
+            right: -8vw;
+            font-size: 1vw;
+            font-weight: 900;
+            background: white;
+            padding: 0.2vw 0.5vw;
+            border: 0.12vw solid #2c3e50;
+            border-radius: 0.3vw;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Земно ускорение (g)</label>
+            <select id="input-g">
+                <option value="9.8">g = 9.8 m/s²</option>
+                <option value="9.81">g = 9.81 m/s²</option>
+                <option value="10">g = 10 m/s²</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Време (t): <span id="val-t">2</span> s</label>
+            <input type="range" id="input-t" min="0.1" max="8" step="0.1" value="2">
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="simulation-container">
+            <div class="formula-board" id="formula-display"></div>
+            <div class="object" id="obj-start"></div>
+            <div class="height-gap" id="gap">
+                <div class="vertical-arrow" id="arrow-line"></div>
+                <div class="label-h" id="label-h">h = 0m</div>
+            </div>
+            <div class="object" id="obj-end"></div>
+        </div>
+        <div class="ground"></div>
+    </div>
+
+    <script>
+        const inputG = document.getElementById('input-g');
+        const inputT = document.getElementById('input-t');
+        const formulaDisplay = document.getElementById('formula-display');
+        const gapContainer = document.getElementById('gap');
+        const arrowLine = document.getElementById('arrow-line');
+        const labelH = document.getElementById('label-h');
+        const objEnd = document.getElementById('obj-end');
+
+        function update() {
+            const g = parseFloat(inputG.value);
+            const t = parseFloat(inputT.value);
+
+            const vFinal = (g * t).toFixed(2);
+            const height = (0.5 * g * Math.pow(t, 2)).toFixed(2);
+
+            document.getElementById('val-t').innerText = t;
+
+            formulaDisplay.innerHTML = `
+                <div style="color:#e67e22; font-size:0.85vw">v = g * t</div>
+                <div style="font-size:0.8vw">v = ${g} * ${t} = <b>${vFinal} m/s</b></div>
+                <hr style="border:none; border-top:0.1vw solid #eee; margin:0.4vw 0;">
+                <div style="color:#2980b9; font-size:0.85vw">h = (g * t²) / 2</div>
+                <div style="font-size:0.8vw">h = (${g} * ${t}²) / 2 = <b>${height} m</b></div>
+            `;
+
+            const visualHeight = Math.min(height * 0.05, 16); 
+            
+            gsap.to(gapContainer, { height: visualHeight + "vw", duration: 0.3 });
+            gsap.to(arrowLine, { height: Math.max(visualHeight - 0.4, 0) + "vw", duration: 0.3 });
+            labelH.innerHTML = `h = ${height} m`;
+
+            const blurVal = Math.min(vFinal / 25, 0.25);
+            objEnd.style.filter = `blur(${blurVal}vw)`;
+            
+            if (vFinal > 20) {
+                gsap.to(objEnd, {
+                    x: (Math.random() * 0.1 - 0.05) + "vw",
+                    duration: 0.05,
+                    repeat: 1,
+                    yoyo: true
+                });
+            }
+        }
+
+        inputG.addEventListener('change', update);
+        inputT.addEventListener('input', update);
+        gsap.to("#obj-start", { scale: 1.05, duration: 0.8, repeat: -1, yoyo: true, ease: "sine.inOut" });
+        update();
+    </script>
+</body>
+</html>
