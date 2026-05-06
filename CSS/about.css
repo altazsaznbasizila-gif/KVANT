@@ -1,0 +1,144 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fbff;
+    color: #1a2b48;
+    display: flex;
+    justify-content: center;
+    padding: 2.08vw 1.04vw;
+    margin: 0;
+}
+
+.main-container {
+    max-width: 31.25vw;
+    width: 100%;
+    text-align: center;
+    border: 0.052vw solid #cbd5e0;
+    border-radius: 1.5vw;
+    padding: 2.5vw;
+    background-color: #ffffff;
+    box-shadow: 0 0.52vw 1.56vw rgba(0, 0, 0, 0.05);
+}
+
+.logo-circle {
+    width: 5.21vw;
+    height: 5.21vw;
+    background: #eef5ff;
+    border-radius: 50%;
+    margin: 0 auto 1.04vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-circle img {
+    width: 80%;
+}
+
+.subtitle {
+    color: #4da3ff;
+    font-weight: bold;
+    font-size: 0.625vw;
+    letter-spacing: 0.1vw;
+}
+
+h1 {
+    font-size: 1.875vw;
+    margin: 0.52vw 0;
+}
+
+.description {
+    color: #6a7a95;
+    line-height: 1.6;
+    font-size: 0.8vw;
+}
+
+.divider {
+    border: 0;
+    border-top: 0.052vw solid #e0eaf5;
+    margin: 1.56vw 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.04vw;
+    text-align: left;
+    margin-bottom: 1.56vw;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.label {
+    font-size: 0.57vw;
+    color: #a0aec0;
+    font-weight: bold;
+    margin-bottom: 0.2vw;
+}
+
+.value {
+    font-weight: 600;
+    font-size: 0.73vw;
+}
+
+.project-number {
+    display: inline-block;
+    background: #e6f2ff;
+    color: #3182ce;
+    padding: 0.42vw 0.83vw;
+    border-radius: 1.04vw;
+    font-weight: bold;
+    font-size: 0.7vw;
+    margin-bottom: 1.04vw;
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 0.52vw;
+    margin-bottom: 1.56vw;
+}
+
+.tech-stack span {
+    background: #edf2f7;
+    color: #718096;
+    padding: 0.26vw 0.78vw;
+    border-radius: 0.78vw;
+    font-size: 0.67vw;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 15.625vw;
+    margin: 0.52vw auto;
+    padding: 0.78vw;
+    border-radius: 1.56vw;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 0.8vw;
+}
+
+.btn-dark {
+    background: #0f172a;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 0.052vw solid #cbd5e0;
+    color: #4a5568;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: translateY(-0.1vw);
+}

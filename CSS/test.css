@@ -97,3 +97,20 @@ div#progress{
     border-color: #f5c6cb !important;
     color: #721c24 !important;
 }
+
+
+.legal-nav a{
+    font-size:1.3vw;
+    right: 18.5vw;
+    position: absolute;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #6699e6;
+    font-weight: bold;
+    font-size: 0.365vw;
+    transition: 0.3s;
+    font-style: italic;
+}
+
