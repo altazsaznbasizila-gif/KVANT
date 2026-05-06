@@ -56,7 +56,11 @@
 
 
 <div class="inventory-container">
-    <button class="inventory-btn">Квантов инвентар</button>
+    <button class="inventory-btn" onclick="clearNotification()">
+        Квантов инвентар
+        <span id="inventory-badge" class="badge hidden">!</span>
+    </button>
+
     <div class="inventory-box" style="background-image: url('../Images/boxtitle_up.png');">
         <div class="inventory-content">
             <div id="reward1" class="reward-item locked">

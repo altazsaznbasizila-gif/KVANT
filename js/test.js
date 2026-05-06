@@ -79,7 +79,10 @@ if (totalPoints >= 26.5) {
 
     resultBox.scrollIntoView({ behavior: 'smooth' });
 
+
     localStorage.setItem('test1Grade', grade);
+    localStorage.setItem('hasNewReward', 'true'); 
+
 }
 
 
@@ -100,6 +103,21 @@ function checkSavedUnlocks() {
         } else if (g1 >= 5.50) {
             unlock("reward2");
         }
+    }
+
+    const hasNew = localStorage.getItem('hasNewReward');
+    const badge = document.getElementById('inventory-badge');
+    
+    if (hasNew === 'true' && badge) {
+        badge.classList.remove('hidden');
+    }
+}
+
+function clearNotification() {
+    const badge = document.getElementById('inventory-badge');
+    if (badge) {
+        badge.classList.add('hidden');
+        localStorage.setItem('hasNewReward', 'false');
     }
 }
 

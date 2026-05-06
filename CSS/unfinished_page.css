@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maintenance-container {
+    width: 100%;
+    max-width: 40vw; 
+    padding: 1.5vw;
+}
+
+.maintenance-card {
+    background: #ffffff;
+    padding: 3vw 2.5vw;
+    border-radius: 2vw;
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 0.1vw solid rgba(10, 88, 202, 0.1);
+}
+
+.icon-sphere {
+    width: 6vw;
+    height: 6vw;
+    background: radial-gradient(circle, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: 50%;
+    margin: 0 auto 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.6vw 1.2vw rgba(187, 222, 251, 0.5);
+}
+
+.inner-icon {
+    font-size: 2.8vw;
+    filter: drop-shadow(0 0.2vw 0.4vw rgba(0,0,0,0.1));
+}
+
+.subtitle {
+    color: #3b7bb2;
+    font-size: 0.8vw;
+    letter-spacing: 0.2vw;
+    margin-bottom: 0.8vw;
+    font-weight: 600;
+}
+
+.main-title {
+    font-size: 2.5vw;
+    color: #2c3e50;
+    margin-bottom: 1.5vw;
+}
+
+.main-title span {
+    color: #00a8ff; 
+}
+
+.description {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 2.5vw;
+    font-size: 1vw;
+}
+
+.progress-section {
+    margin-bottom: 2.5vw;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5vw;
+    background: #ecf0f1;
+    border-radius: 1vw;
+    overflow: hidden;
+    margin-bottom: 0.8vw;
+}
+
+.progress-fill {
+    width: 65%; 
+    height: 100%;
+    background: linear-gradient(90deg, #00a8ff, #00d2ff);
+    border-radius: 1vw;
+    animation: loading 2s infinite ease-in-out;
+}
+
+.progress-text {
+    font-size: 0.75vw;
+    color: #95a5a6;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8vw 2.2vw;
+    border: 0.15vw solid #2c3e50;
+    border-radius: 3vw;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1vw;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #2c3e50;
+    color: white;
+    transform: translateY(-0.2vw);
+}
+
+.arrow {
+    font-size: 1.5vw;
+    margin-right: 0.6vw;
+    margin-top: -0.2vw;
+}
+
+@keyframes loading {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; transform: scaleX(1.02); }
+    100% { opacity: 0.7; }
+}

@@ -63,14 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(updateFact, 8000);
         updateFact();
     }
-
-    setTimeout(() => {
-        const progressBar = document.getElementById('user-progress');
-        const progressPercent = document.querySelector('.progress-percent');
-        
-        if (progressBar) progressBar.style.width = "100%"; 
-        if (progressPercent) progressPercent.textContent = "100%";
-    }, 2000);
 });
 
 
