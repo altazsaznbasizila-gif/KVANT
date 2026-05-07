@@ -93,10 +93,11 @@ let testGrades = {
 
 function checkSavedUnlocks() {
     const savedGrade1 = localStorage.getItem('test1Grade');
-    
+    const hasNew = localStorage.getItem('hasNewReward');
+    const badge = document.getElementById('inventory-badge');
+
     if (savedGrade1 !== null) {
         let g1 = parseFloat(savedGrade1);
-        
         if (g1 >= 6.00) {
             unlock("reward1");
             unlock("reward2");
@@ -105,10 +106,7 @@ function checkSavedUnlocks() {
         }
     }
 
-    const hasNew = localStorage.getItem('hasNewReward');
-    const badge = document.getElementById('inventory-badge');
-    
-    if (hasNew === 'true' && badge) {
+    if (hasNew === 'true' && savedGrade1 !== null && badge) {
         badge.classList.remove('hidden');
     }
 }
@@ -117,8 +115,8 @@ function clearNotification() {
     const badge = document.getElementById('inventory-badge');
     if (badge) {
         badge.classList.add('hidden');
-        localStorage.setItem('hasNewReward', 'false');
     }
+    localStorage.setItem('hasNewReward', 'false');
 }
 
 function unlock(id) {

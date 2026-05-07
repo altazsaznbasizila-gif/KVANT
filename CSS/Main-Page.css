@@ -402,12 +402,13 @@ footer {
     flex: 1; 
     min-width: 200px; 
     text-align: center; 
+    font-size: 1vw;
 }
 
 .footer-section h3 { 
     color: #00bcd4; 
     margin-bottom: 12px; 
-    font-size: clamp(14px, 0.94vw, 20px); 
+    font-size: clamp(16px,1.2vw, 25px); 
 }
 
 .footer-section p, 
