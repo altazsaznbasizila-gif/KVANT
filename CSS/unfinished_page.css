@@ -26,13 +26,15 @@ body {
     box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.05);
     text-align: center;
     border: 0.1vw solid rgba(10, 88, 202, 0.1);
+    width: 35vw;
+    height: 45vw;
 }
 
 .icon-sphere {
-    width: 6vw;
-    height: 6vw;
     background: radial-gradient(circle, #e3f2fd 0%, #bbdefb 100%);
     border-radius: 50%;
+    width: 12vw;  
+    height: 12vw; 
     margin: 0 auto 2vw;
     display: flex;
     justify-content: center;
@@ -40,9 +42,10 @@ body {
     box-shadow: 0 0.6vw 1.2vw rgba(187, 222, 251, 0.5);
 }
 
-.inner-icon {
-    font-size: 2.8vw;
-    filter: drop-shadow(0 0.2vw 0.4vw rgba(0,0,0,0.1));
+img.inner-icon{
+    width: 21vw !important;
+    height: 11vw !important;
+  
 }
 
 .subtitle {

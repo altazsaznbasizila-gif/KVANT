@@ -6,13 +6,13 @@
 
 .legal-nav {
     max-width: 46.88vw;
-    margin: 0 auto 1.04vw auto;
-    padding: 0 1.04vw;
 
 }
 
 .legal-nav a{
-    font-size:0.6vw;
+    font-size:1.3vw;
+    position: absolute;
+    margin: -0.5vw 0 0 17.3vw;
 }
 
 .back-link {

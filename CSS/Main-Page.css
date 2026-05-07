@@ -503,9 +503,9 @@ footer {
     height: clamp(150px, 13vw, 280px);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    z-index:10000;
-    padding: clamp(30px, 3.5vw, 60px) clamp(10px, 1.5vw, 30px) clamp(10px, 1.5vw, 30px) clamp(10px, 1.5vw, 30px);
+    padding: clamp(30px, 3.5vw, 60px) clamp(10px, 1.5vw, 30px) clamp(10px, 1.5vw, 30px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10000;
 }
 
 .inventory-container:hover .inventory-box {
@@ -513,7 +513,6 @@ footer {
     visibility: visible;
     transform: translateX(-50%) translateY(clamp(2px, 0.2vw, 10px));
 }
-
 .inventory-content {
     display: flex;
     flex-wrap: wrap;

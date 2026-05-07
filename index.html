@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>К.В.А.Н.Т. | Физика</title>
+    <meta name="keywords" content="физика, механика, оптика, електричество, атомна физика, КВАНТ, образование, ученици, НОИТ, интерактивен сайт">
     <meta name="description" content="К.В.А.Н.Т. — интерактивен мултимедиен образователен сайт по физика за ученици. Механика, оптика, електричество и атомна физика с анимации и обяснения.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Main-Page.css">
     <link rel="stylesheet" href="CSS/Components.css">
@@ -29,7 +30,7 @@
     </div>
 </div>
     
-
+<header>
 <div class="top-banner">
     <div class="banner-left">
         <div class="icon">
@@ -51,76 +52,68 @@
         </div>
     </div>
 
-    <div class="nav-right">
-        <div id="live-clock" class="clock-display">00:00:00</div>
+<div class="nav-right">
 
+    <div style="display: flex; align-items: center; gap: clamp(6px, 0.8vw, 16px);">
 
-<div style="position: absolute; margin: clamp(40px, 4vw, 80px) 0 0 clamp(60px, 6vw, 120px); display: inline-block;">
-    
-    <img id="img-info" src="Images/info.png" 
-         style="width: clamp(24px, 3vw, 45px); height: clamp(20px, 2.5vw, 38px); display: block; cursor: pointer;">
-    
-    <i style="position: absolute; top: clamp(2px, 0.25vw, 5px); left: clamp(26px, 2.6vw, 50px); color: gray; pointer-events: none; margin: clamp(5px, 0.5vw, 10px) 0 0 0; font-size: clamp(10px, 0.8vw, 14px);">Info</i>
+        <div style="position: relative; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+            <img id="img-info" src="Images/info.png" style="width: clamp(20px, 2vw, 38px); height: auto;">
+            <i style="color: gray; font-size: clamp(8px, 0.6vw, 12px); margin-top: 2px;">Info</i>
 
-    <div id="info-box" 
-         style="opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(-5px); position: absolute; top: 100%; left: 0; width: clamp(150px, 15vw, 300px);">
-        <div style="position: relative;">
-            <img src="Images/boxtitle_up.png" style="width: clamp(200px, 20vw, 400px); display: block;">
-            
-            <p style="position: absolute; top: clamp(30px, 3vw, 60px); left: 14%; width: clamp(170px, 17vw, 340px); margin: 0; color: rgb(0, 0, 0); font-size: clamp(12px, 0.8vw, 16px); font-family: sans-serif; line-height: 1.4;">
-                <b>Какво е квантов инвентар? - </b> 
-                <i>това е място, в което се съхраняват всички постижения и награди на потребителя (пример: след получаване на отлична оценка на тест)</i>
-            </p>
+<div id="info-box" style="opacity: 0; visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(-5px); position: absolute; top: 100%; left: -2vw; width: clamp(150px, 18vw, 340px); z-index: 10000;">                <div style="position: relative;">
+                    <img src="Images/boxtitle_up.png" style="width: clamp(150px, 18.5vw, 350px); display: block;">
+                    <p style="position: absolute; top: clamp(28px, 2.8vw, 56px); left: 14%; width: clamp(130px, 15vw, 300px); margin: 0; color: #000; font-size: clamp(11px, 0.75vw, 15px); font-family: sans-serif; line-height: 1.4;">
+                        <b>Какво е квантов инвентар? - </b>
+                        <i>това е място, в което се съхраняват всички постижения и награди на потребителя (пример: след получаване на отлична оценка на тест)</i>
+                    </p>
+                </div>
+            </div>
         </div>
+
+        <div class="inventory-container">
+            <button class="inventory-btn" onclick="clearNotification()">
+                Квантов инвентар
+                <span id="inventory-badge" class="badge hidden">!</span>
+            </button>
+
+            <div class="inventory-box" style="background-image: url('../Images/boxtitle_up.png');">
+                <div class="inventory-content">
+                    <div id="reward1" class="reward-item locked">
+                        <img src="Images/skill_lock.png" alt="Reward 1">
+                        <span>Тест 1 (6.00)</span>
+                    </div>
+                    <div id="reward2" class="reward-item locked">
+                        <img src="Images/skill_lock.png" alt="Reward 2">
+                        <span>Тест 1 (5.50)</span>
+                    </div>
+                    <div id="reward3" class="reward-item locked">
+                        <img src="Images/skill_lock.png" alt="Reward 3">
+                        <span>Тест 2 (6.00)</span>
+                    </div>
+                    <div id="reward4" class="reward-item locked">
+                        <img src="Images/skill_lock.png" alt="Reward 4">
+                        <span>Тест 2 (5.50)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <nav class="dropdown">
+                <button class="dropbtn">Меню <img src="../Images/menu.png" style="width: 1.2vw; position: relative; top: 0.25vw;"></button>        
+                <div class="dropdown-content">
+            <a href="#topics-section">Материали - Раздели</a>
+            <a href="pages/about.html">За проекта</a>
+            <a href="pages/legal.html#privacy">Правна информация</a>
+        </div>
+    </nav>
 
 </div>
 
-<div class="inventory-container">
-    <button class="inventory-btn" onclick="clearNotification()">
-        Квантов инвентар
-        <span id="inventory-badge" class="badge hidden">!</span>
-    </button>
+</header>
 
-    
-
-    <div class="inventory-box" style="background-image: url('../Images/boxtitle_up.png');">
-        <div class="inventory-content">
-            <div id="reward1" class="reward-item locked">
-                <img src="Images/skill_lock.png" alt="Reward 1">
-                <span>Отличен 6.00</span>
-            </div>
-            <div id="reward2" class="reward-item locked">
-                <img src="Images/skill_lock.png" alt="Reward 2">
-                <span>Отличен 5.50</span>
-            </div>
-            <div id="reward3" class="reward-item locked">
-                <img src="Images/skill_lock.png" alt="Reward 3">
-                <span>Тест 2 (6.00)</span>
-            </div>
-            <div id="reward4" class="reward-item locked">
-                <img src="Images/skill_lock.png" alt="Reward 4">
-                <span>Тест 2 (5.50)</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-        <div class="dropdown">
-            <button class="dropbtn">Категории ▼</button>
-            <div class="dropdown-content">
-                <a href="#topics-section"><i>Материали - Раздели</i></a>
-                <hr class="dropdown-divider">
-                <div class="dropdown-header"><b>Информация</b></div>
-                <a href="pages/about.html"><i>За проекта</i></a>
-                <a href="pages/legal.html#privacy"><i>Правна информация</i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
+<main>
     <section class="hero">
         <h1>Научете Физиката по Интелигентния начин</h1>
         <p>Интерактивни Уроци, Формули и Инструменти за овладяване на физиката</p>
@@ -157,22 +150,22 @@
             </div>
         </section>
     </div>
-
+</main>
 <footer>
     <div class="footer-container">
         <div class="footer-section">
-             <a href="/pages/about.html"><h3 style="font-size: 1.6vw; margin: 2vw 7vw 2vw 0; font-style: italic; font-family: Times New Roman, Times, serif;">За проекта</h3></a>
+             <a href="pages/about.html"><h3 style="font-size: 1.6vw; margin: 2vw 7vw 2vw 0; font-style: italic; font-family: Times New Roman, Times, serif;">За проекта</h3></a>
         </div>
 
         <div class="footer-section">
             <h3 style="margin: 1.6vw 0 0 0;">КОНТАКТИ</h3>
             <p>&copy; 2026 K.В.А.Н.Т. Стилиян Бакалов</p>
-            <p>Лицензиран под <a href="gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a></p>
+            <p>Лицензиран под <a href="gnu.org/licenses/gpl-3.0.html">The GNU General Public License v3.0 - GNU Project - Free Software Foundation</a></p>
             
         </div>
 
         <div class="footer-section">
-            <a href="/pages/legal.html"><h3 style="font-size: 1.6vw; margin: 2vw 0 0 5vw; font-style: italic; font-family: Times New Roman, Times, serif;">Правна информация</h3></a>
+            <a href="pages/legal.html"><h3 style="font-size: 1.6vw; margin: 2vw 0 0 5vw; font-style: italic; font-family: Times New Roman, Times, serif;">Правна информация</h3></a>
         </div>
     </div>
 </footer>
