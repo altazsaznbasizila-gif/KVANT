@@ -21,6 +21,8 @@ body {
     padding: clamp(15px, 2.08vw, 40px);
     padding-bottom: clamp(100px, 18.23vw, 350px);
     margin-left: clamp(200px, 20.05vw, 350px);
+    overflow-y: auto;
+    height: 100vh;
 }
 
 .breadcrumb {

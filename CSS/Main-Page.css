@@ -591,6 +591,10 @@ footer {
     border-radius: 10px;
 }
 
+.inventory-content::-webkit-scrollbar {
+    width: clamp(3px, 0.3vw, 8px);
+}
+
 .unlocked {
     filter: none !important;
     opacity: 1 !important;
