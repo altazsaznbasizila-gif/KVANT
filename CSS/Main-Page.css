@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-x: hidden;
-}
 
 body {
     background: #f2f4f8;
