@@ -204,7 +204,11 @@ body {
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     min-width: 180px;
-    border-radius: 5px;
+    border-radius: 20px;
+    border-color: #0d496c;
+    border-style:solid;
+    border-width: 0.3vw;
+
 }
 
 .dropdown-content a {
