@@ -127,7 +127,7 @@ function unlock(id) {
 
         const img = element.querySelector('img');
         if (img) {
-            img.src = "../Images/skill_unlock.png";
+            img.src = "./Images/skill_unlock.png";
             img.style.width = "7vw";
             img.style.height = "3.5vw";
         }
