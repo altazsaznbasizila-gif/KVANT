@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.addEventListener('scroll', function() {
+    document.querySelector('.main').addEventListener('scroll', function() {
         const sections = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7', 'section8', 'section11', 'section14'];
         const triggerPoint = window.innerHeight / 2;
 
