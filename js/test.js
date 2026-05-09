@@ -72,7 +72,7 @@ if (totalPoints >= 26.5) {
     const gradeDisplay = document.getElementById('grade-text');
 
     resultBox.classList.remove('hidden');
-    scoreDisplay.innerText = `Твоите точки: ${totalPoints} от 30т`;
+    scoreDisplay.innerText = `Твоите точки: ${totalPoints} от 28т`;
     
     gradeDisplay.innerText = `Оценка: ${typeText} ${grade}`;
     gradeDisplay.style.color = color;
